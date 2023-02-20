@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ECF-Studi-Quai-Antique/static/css/main.c9d6fa5a.css",
-    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.b139ee3e.js",
+    "main.css": "/ECF-Studi-Quai-Antique/static/css/main.d66734ea.css",
+    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.8a1643db.js",
     "static/media/bg.jpg": "/ECF-Studi-Quai-Antique/static/media/bg.25f30070466f3efec9fc.jpg",
     "static/media/Allura-Regular.ttf": "/ECF-Studi-Quai-Antique/static/media/Allura-Regular.9429cde4d80d03c85860.ttf",
     "static/media/RobotoSlab-Regular.ttf": "/ECF-Studi-Quai-Antique/static/media/RobotoSlab-Regular.39c7af8a5d124ff3c247.ttf",
     "index.html": "/ECF-Studi-Quai-Antique/index.html",
-    "main.c9d6fa5a.css.map": "/ECF-Studi-Quai-Antique/static/css/main.c9d6fa5a.css.map",
-    "main.b139ee3e.js.map": "/ECF-Studi-Quai-Antique/static/js/main.b139ee3e.js.map"
+    "main.d66734ea.css.map": "/ECF-Studi-Quai-Antique/static/css/main.d66734ea.css.map",
+    "main.8a1643db.js.map": "/ECF-Studi-Quai-Antique/static/js/main.8a1643db.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9d6fa5a.css",
-    "static/js/main.b139ee3e.js"
+    "static/css/main.d66734ea.css",
+    "static/js/main.8a1643db.js"
   ]
 }
