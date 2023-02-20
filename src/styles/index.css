@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "font-Allura";
+  src: url(../fonts/Allura-Regular.ttf);
+}
+@font-face {
+  font-family: "font-roboto";
+  src: url(../fonts/RobotoSlab-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: unset;
+}
+
+.logo {
+  font-family: "font-Allura", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 10px;
+  color: rgb(243, 226, 221);
+}
+
+.header {
+  height: 100vh;
+  background: url(../../img/bg.jpg) center/cover;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 25px;
+  height: 15px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+.hamburger-menu .line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: rgb(243, 226, 221);
+  transition: transform 0.3s ease;
+}
+.hamburger-menu:before, .hamburger-menu:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: rgb(243, 226, 221);
+  transition: transform 0.3s ease;
+}
+.hamburger-menu:before {
+  transform: translateY(-6px);
+}
+.hamburger-menu:after {
+  transform: translateY(6px);
+}
+.hamburger-menu.open .line {
+  transform: rotate(45deg);
+}
+.hamburger-menu.open:before {
+  transform: translateY(0) rotate(45deg);
+}
+.hamburger-menu.open:after {
+  transform: translateY(0) rotate(-45deg);
+}
+.hamburger-menu.open ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-60px);
+  transition: transform 0.3s ease;
+}
+.hamburger-menu.open li {
+  padding-top: 8px;
+}
+.hamburger-menu ul {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 70px;
+}
+.hamburger-menu li {
+  color: rgb(243, 226, 221);
+  font-family: "font-roboto", serif;
+}
+.hamburger-menu li:hover {
+  font-size: 1.2rem;
+  transition: 0.7s ease;
+}/*# sourceMappingURL=index.css.map */

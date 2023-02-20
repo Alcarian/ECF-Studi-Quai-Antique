@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "font-Allura";
+    src: url(../fonts/Allura-Regular.ttf);
+}
+
+@font-face {
+    font-family: "font-roboto";
+    src: url(../fonts/RobotoSlab-Regular.ttf);
+}
+
+$font-1: "font-Allura", sans-serif;
+$font2: "font-roboto", serif;
+
+$color-black: #21201e;
+$color-dark: black;
+$color-yellow: #F6AA1C;
+$color-orange: #BC3908;
+$color-brown: #621708;
+$color-white: rgb(243, 226, 221);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html { 
+    scroll-behavior: unset;
+}
