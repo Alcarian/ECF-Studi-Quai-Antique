@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Le lien du site déployé est enfin ici !!! : [Quai Antique]: https://alcarian.github.io/ECF-Studi-Quai-Antique/.
+Le lien du site déployé est enfin ici !!! : [Quai Antique](https://alcarian.github.io/ECF-Studi-Quai-Antique/).
 
 ## Available Scripts
 
