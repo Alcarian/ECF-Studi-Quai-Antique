@@ -1,7 +1,38 @@
 .header {
     height: 100vh;
     background: url(../../img/bg.jpg) center/cover;
-    display: flex;
-    justify-content: space-between;
     padding: 10px;
 }
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-text {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1, h6 {
+        color: $color-white;
+        font-family: $font-1;
+        text-align: center;
+    }
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+

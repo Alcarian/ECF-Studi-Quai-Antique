@@ -23,7 +23,7 @@ html {
 .logo {
   font-family: "font-Allura", sans-serif;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin: 10px;
   color: rgb(243, 226, 221);
 }
@@ -31,9 +31,37 @@ html {
 .header {
   height: 100vh;
   background: url(../../img/bg.jpg) center/cover;
+  padding: 10px;
+}
+
+nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+}
+
+.header-text {
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-text h1, .header-text h6 {
+  color: rgb(243, 226, 221);
+  font-family: "font-Allura", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h6 {
+  font-size: 1.5rem;
 }
 
 .hamburger-menu {
@@ -83,7 +111,7 @@ html {
 .hamburger-menu.open ul {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-60px);
+  transform: translateX(-70px);
   transition: transform 0.3s ease;
 }
 .hamburger-menu.open li {
@@ -94,13 +122,12 @@ html {
   padding: 0;
   opacity: 0;
   visibility: hidden;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 .hamburger-menu li {
   color: rgb(243, 226, 221);
   font-family: "font-roboto", serif;
 }
 .hamburger-menu li:hover {
-  font-size: 1.2rem;
-  transition: 0.7s ease;
+  color: #F6AA1C;
 }/*# sourceMappingURL=index.css.map */
