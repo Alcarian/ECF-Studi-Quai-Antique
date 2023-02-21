@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/ECF-Studi-Quai-Antique/static/css/main.9955dcc5.css",
-    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.06b2fc1c.js",
+    "main.css": "/ECF-Studi-Quai-Antique/static/css/main.09799f26.css",
+    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.b191c484.js",
+    "static/media/poulet5.jpg": "/ECF-Studi-Quai-Antique/static/media/poulet5.b933155b4010a038f955.jpg",
+    "static/media/charcuterie4.jpg": "/ECF-Studi-Quai-Antique/static/media/charcuterie4.b2797cfbd072fce44fa5.jpg",
     "static/media/bg.jpg": "/ECF-Studi-Quai-Antique/static/media/bg.25f30070466f3efec9fc.jpg",
     "static/media/table1.jpg": "/ECF-Studi-Quai-Antique/static/media/table1.b0d00d1f3e9c08d4bece.jpg",
     "static/media/table2.jpg": "/ECF-Studi-Quai-Antique/static/media/table2.bcddb13836b73d88ba9b.jpg",
+    "static/media/table3.jpg": "/ECF-Studi-Quai-Antique/static/media/table3.243118486014b9582a92.jpg",
     "static/media/Allura-Regular.ttf": "/ECF-Studi-Quai-Antique/static/media/Allura-Regular.9429cde4d80d03c85860.ttf",
     "static/media/RobotoSlab-Regular.ttf": "/ECF-Studi-Quai-Antique/static/media/RobotoSlab-Regular.39c7af8a5d124ff3c247.ttf",
     "index.html": "/ECF-Studi-Quai-Antique/index.html",
-    "main.9955dcc5.css.map": "/ECF-Studi-Quai-Antique/static/css/main.9955dcc5.css.map",
-    "main.06b2fc1c.js.map": "/ECF-Studi-Quai-Antique/static/js/main.06b2fc1c.js.map"
+    "main.09799f26.css.map": "/ECF-Studi-Quai-Antique/static/css/main.09799f26.css.map",
+    "main.b191c484.js.map": "/ECF-Studi-Quai-Antique/static/js/main.b191c484.js.map"
   },
   "entrypoints": [
-    "static/css/main.9955dcc5.css",
-    "static/js/main.06b2fc1c.js"
+    "static/css/main.09799f26.css",
+    "static/js/main.b191c484.js"
   ]
 }
