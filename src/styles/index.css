@@ -74,7 +74,7 @@ h6 {
   height: 15px;
   position: relative;
   z-index: 1;
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease;
 }
 .hamburger-menu .line {
   position: absolute;
@@ -82,7 +82,7 @@ h6 {
   height: 3px;
   border-radius: 5px;
   background-color: rgb(243, 226, 221);
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease;
 }
 .hamburger-menu:before, .hamburger-menu:after {
   content: "";
@@ -91,7 +91,7 @@ h6 {
   height: 3px;
   border-radius: 5px;
   background-color: rgb(243, 226, 221);
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease;
 }
 .hamburger-menu:before {
   transform: translateY(-6px);
@@ -112,7 +112,7 @@ h6 {
   opacity: 1;
   visibility: visible;
   transform: translateX(-70px);
-  transition: transform 0.3s ease;
+  transition: transform 1.2s ease;
 }
 .hamburger-menu.open li {
   padding-top: 8px;
@@ -174,4 +174,14 @@ h6 {
 
 .slide-container {
   background: #21201e;
+}
+
+.imgStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 400px;
+  width: 90%;
+  margin: 0 auto;
 }/*# sourceMappingURL=index.css.map */

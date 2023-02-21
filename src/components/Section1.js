@@ -7,7 +7,7 @@ const Section1 = () => {
     <div className="section-1">
       <h2>Le mot du Chef</h2>
       <span>
-        <img src={plate} alt="" />
+        <img src={plate} alt="icone" />
       </span>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolore.
@@ -17,7 +17,7 @@ const Section1 = () => {
         modi officia corrupti necessitatibus corporis nostrum dolores, laborum
         voluptate nam recusandae sint.
       </p>
-      <img src={avatar1} alt="" />
+      <img src={avatar1} alt="chef" />
       <h3>Jaimes Lafondue</h3>
     </div>
   );

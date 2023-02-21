@@ -8,7 +8,7 @@
     height: 15px;
     position: relative;
     z-index: 1;
-    transition: transform 0.3s ease;
+    transition: transform 0.9s ease;
   
     .line {
       position: absolute;
@@ -16,7 +16,7 @@
       height: 3px;
       border-radius: 5px;
       background-color: $color-white;
-      transition: transform 0.3s ease;
+      transition: transform 0.9s ease;
     }
   
     &:before,
@@ -27,7 +27,7 @@
       height: 3px;
       border-radius: 5px;
       background-color: $color-white;
-      transition: transform 0.3s ease;
+      transition: transform 0.9s ease;
     }
   
     &:before {
@@ -55,7 +55,7 @@
         opacity: 1;
         visibility: visible;
         transform: translateX(-70px);
-        transition: transform 0.3s ease;
+        transition: transform 1.2s ease;
       }
 
       li {

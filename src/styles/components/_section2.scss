@@ -1,3 +1,14 @@
 .slide-container {
     background: $color-black;
+    
 }
+
+.imgStyle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 400px;
+    width: 90%;
+    margin: 0 auto;
+  };

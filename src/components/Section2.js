@@ -3,64 +3,32 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import table1 from "../img/table1.jpg";
 import table2 from "../img/table2.jpg";
+import table3 from "../img/table3.jpg";
+import charcuterie4 from "../img/charcuterie4.jpg";
+import poulet5 from "../img/poulet5.jpg";
 
-const divStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundSize: "cover",
-  height: "400px",
-};
-
-const spanStyle = {
-  padding: "20px",
-  background: "#efefef",
-  color: "#000000",
-};
-
-const slideImages = [
-  {
-    url: { table1 },
-    caption: "Slide1",
-  },
-
-  {
-    url: { table2 },
-    caption: "Slide2",
-  },
-
-  {
-    url: "frontend-resto/src/img/img3.jpg",
-    caption: "Slide3",
-  },
-
-  {
-    url: "frontend-resto/src/img/img4.jpg",
-    caption: "Slide4",
-  },
-
-  {
-    url: "frontend-resto/src/img/img5.jpg",
-    caption: "Slide5",
-  },
+const images = [
+  { id: 1, URL: JSON.parse(JSON.stringify(table1)) },
+  { id: 2, URL: JSON.parse(JSON.stringify(table2)) },
+  { id: 3, URL: JSON.parse(JSON.stringify(table3)) },
+  { id: 4, URL: JSON.parse(JSON.stringify(charcuterie4)) },
+  { id: 5, URL: JSON.parse(JSON.stringify(poulet5)) },
 ];
 
-const Section2 = () => {
+export default function Section2() {
   return (
     <div className="slide-container">
       <Slide>
-        {slideImages.map((slideImage, index) => (
-          <div key={index}>
-            <div
-              style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}
-            >
-              <span style={spanStyle}>{slideImage.caption}</span>
-            </div>
+        {images.map((image) => (
+          <div key={image.id}>
+            <img
+              className="imgStyle"
+              src={image.URL}
+              alt={`images ${image.id}`}
+            />
           </div>
         ))}
       </Slide>
     </div>
   );
-};
-
-export default Section2;
+}
