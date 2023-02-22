@@ -1,24 +1,29 @@
 .header {
     height: 100vh;
     background: url(../../img/bg.jpg) center/cover;
-    padding: 10px;
+
+    nav {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 10%;
+        background: rgba(0, 0, 0, 0.548);
+        margin: 0 auto;
+    }
 }
 
-nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .header-text {
-    margin: 0 auto;
     width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 
     h1, h6 {
         color: $color-white;

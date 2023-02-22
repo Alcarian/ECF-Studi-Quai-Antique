@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="header" id="accueil">
       <nav>
         <Logo />
         <HamburgerMenu />

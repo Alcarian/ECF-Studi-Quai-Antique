@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const HamburgerMenu = () => {
+export default function HamburgerMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
 
@@ -8,7 +8,14 @@ const HamburgerMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const menuItems = ["Accueil", "Photos", "Menus", "Réservation"];
+  const menuItems = [
+    "Accueil",
+    "Photos",
+    "Menus",
+    "Réservation",
+    "Connexion",
+    "Devenir client ?",
+  ];
 
   return (
     <div
@@ -31,6 +38,4 @@ const HamburgerMenu = () => {
       </ul>
     </div>
   );
-};
-
-export default HamburgerMenu;
+}

@@ -17,7 +17,7 @@
 }
 
 html {
-  scroll-behavior: unset;
+  scroll-behavior: smooth;
 }
 
 .logo {
@@ -31,24 +31,27 @@ html {
 .header {
   height: 100vh;
   background: url(../../img/bg.jpg) center/cover;
-  padding: 10px;
 }
-
-nav {
-  width: 100%;
+.header nav {
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 10%;
+  background: rgba(0, 0, 0, 0.548);
+  margin: 0 auto;
 }
 
 .header-text {
-  margin: 0 auto;
   width: 90%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 .header-text h1, .header-text h6 {
   color: rgb(243, 226, 221);
@@ -73,8 +76,9 @@ h6 {
   width: 25px;
   height: 15px;
   position: relative;
-  z-index: 1;
+  z-index: 100;
   transition: transform 0.9s ease;
+  margin-right: 5px;
 }
 .hamburger-menu .line {
   position: absolute;
@@ -111,8 +115,9 @@ h6 {
 .hamburger-menu.open ul {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-70px);
+  transform: translateX(-40px);
   transition: transform 1.2s ease;
+  background: rgba(0, 0, 0, 0.548);
 }
 .hamburger-menu.open li {
   padding-top: 8px;
@@ -122,7 +127,7 @@ h6 {
   padding: 0;
   opacity: 0;
   visibility: hidden;
-  margin-top: 50px;
+  margin-top: 140px;
 }
 .hamburger-menu li {
   color: rgb(243, 226, 221);
@@ -139,9 +144,9 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin: 0 auto;
 }
 .section-1 h2 {
   color: #621708;
@@ -184,4 +189,141 @@ h6 {
   height: 400px;
   width: 90%;
   margin: 0 auto;
+}
+
+.menus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(../../img/bg2.jpg) center/cover;
+}
+.menus h2 {
+  color: #BC3908;
+  font-family: "font-Allura", sans-serif;
+  font-size: 2rem;
+  margin-top: 40px;
+  font-weight: 200;
+}
+.menus span {
+  margin-top: 30px;
+}
+
+.navMenu {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.navMenu a {
+  padding: 5px;
+}
+.navMenu a:hover {
+  transition: 0.6s;
+  transform: scale(1.1);
+}
+.navMenu a button {
+  cursor: pointer;
+  border: none;
+  font-size: 1.5rem;
+  transition: 0.6s;
+  font-family: "font-Allura", sans-serif;
+  background: rgba(0, 0, 0, 0.548);
+  border-radius: 10px;
+  color: #F6AA1C;
+  padding: 5px;
+  margin-top: 30px;
+}
+.navMenu .nav-active {
+  position: relative;
+}
+.navMenu .nav-active::after {
+  content: "";
+  height: 4px;
+  width: 0;
+  background: #BC3908;
+  position: absolute;
+  border-radius: 10px;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-animation: anim 0.6s ease forwards;
+  animation: anim 1s ease forwards;
+}
+@-webkit-keyframes anim {
+  to {
+    width: 100%;
+  }
+}
+@keyframes anim {
+  to {
+    width: 100%;
+  }
+}
+
+.card {
+  width: 90%;
+  background: rgb(243, 226, 221);
+}
+.card .dinerMenu, .card .drinkMenu {
+  display: none;
+}
+
+.lunchCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lunchCard h1 {
+  font-size: 2rem;
+  font-family: "font-Allura", sans-serif;
+  color: #BC3908;
+  margin: 30px 0;
+}
+.lunchCard p {
+  font-family: "font-roboto", serif;
+}
+.lunchCard h3 {
+  margin-top: 30px;
+  font-size: 2rem;
+}
+.lunchCard h2 {
+  border-bottom: 1px solid #F6AA1C;
+  margin: 30px 0;
+}
+.lunchCard div {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+.lunchCard div img {
+  height: 70px;
+  width: 70px;
+}
+.lunchCard div div {
+  margin-left: 15px;
+  justify-content: center;
+}
+
+.top {
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+.top i {
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  border: 1px solid #BC3908;
+  border-radius: 50px;
+  color: #BC3908;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=index.css.map */

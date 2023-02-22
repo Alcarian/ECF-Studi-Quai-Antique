@@ -7,8 +7,9 @@
     width: 25px;
     height: 15px;
     position: relative;
-    z-index: 1;
+    z-index: 100;
     transition: transform 0.9s ease;
+    margin-right: 5px;
   
     .line {
       position: absolute;
@@ -54,8 +55,9 @@
       ul {
         opacity: 1;
         visibility: visible;
-        transform: translateX(-70px);
+        transform: translateX(-40px);
         transition: transform 1.2s ease;
+        background: rgba(0, 0, 0, 0.548);
       }
 
       li {
@@ -68,7 +70,7 @@
       padding: 0;
       opacity: 0;
       visibility: hidden;
-      margin-top: 50px;
+      margin-top: 140px;
     }
 
     li {

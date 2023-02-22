@@ -17,7 +17,7 @@ const images = [
 
 export default function Section2() {
   return (
-    <div className="slide-container">
+    <div className="slide-container" id="diapo">
       <Slide>
         {images.map((image) => (
           <div key={image.id}>
