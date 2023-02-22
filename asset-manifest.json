@@ -1,21 +1,28 @@
 {
   "files": {
-    "main.css": "/ECF-Studi-Quai-Antique/static/css/main.09799f26.css",
-    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.b191c484.js",
+    "main.css": "/ECF-Studi-Quai-Antique/static/css/main.8cc238f3.css",
+    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.b0345826.js",
     "static/media/poulet5.jpg": "/ECF-Studi-Quai-Antique/static/media/poulet5.b933155b4010a038f955.jpg",
     "static/media/charcuterie4.jpg": "/ECF-Studi-Quai-Antique/static/media/charcuterie4.b2797cfbd072fce44fa5.jpg",
     "static/media/bg.jpg": "/ECF-Studi-Quai-Antique/static/media/bg.25f30070466f3efec9fc.jpg",
+    "static/media/bg2.jpg": "/ECF-Studi-Quai-Antique/static/media/bg2.dc14c2ff1a0f72e0b5bf.jpg",
     "static/media/table1.jpg": "/ECF-Studi-Quai-Antique/static/media/table1.b0d00d1f3e9c08d4bece.jpg",
     "static/media/table2.jpg": "/ECF-Studi-Quai-Antique/static/media/table2.bcddb13836b73d88ba9b.jpg",
     "static/media/table3.jpg": "/ECF-Studi-Quai-Antique/static/media/table3.243118486014b9582a92.jpg",
     "static/media/Allura-Regular.ttf": "/ECF-Studi-Quai-Antique/static/media/Allura-Regular.9429cde4d80d03c85860.ttf",
+    "static/media/viandes.jpg": "/ECF-Studi-Quai-Antique/static/media/viandes.1eba488327d271593080.jpg",
+    "static/media/Salade1.jpg": "/ECF-Studi-Quai-Antique/static/media/Salade1.c5e37efe44cb7150a559.jpg",
     "static/media/RobotoSlab-Regular.ttf": "/ECF-Studi-Quai-Antique/static/media/RobotoSlab-Regular.39c7af8a5d124ff3c247.ttf",
+    "static/media/moussechoc.jpg": "/ECF-Studi-Quai-Antique/static/media/moussechoc.4bb1f8256b76147773a8.jpg",
+    "static/media/Pâtes.jpg": "/ECF-Studi-Quai-Antique/static/media/Pâtes.4ea7ae941b03e1c90d9e.jpg",
+    "static/media/Croissant.jpg": "/ECF-Studi-Quai-Antique/static/media/Croissant.f8b27339c428a43199cf.jpg",
+    "static/media/fruits.jpg": "/ECF-Studi-Quai-Antique/static/media/fruits.6535c59b22adef559bf5.jpg",
     "index.html": "/ECF-Studi-Quai-Antique/index.html",
-    "main.09799f26.css.map": "/ECF-Studi-Quai-Antique/static/css/main.09799f26.css.map",
-    "main.b191c484.js.map": "/ECF-Studi-Quai-Antique/static/js/main.b191c484.js.map"
+    "main.8cc238f3.css.map": "/ECF-Studi-Quai-Antique/static/css/main.8cc238f3.css.map",
+    "main.b0345826.js.map": "/ECF-Studi-Quai-Antique/static/js/main.b0345826.js.map"
   },
   "entrypoints": [
-    "static/css/main.09799f26.css",
-    "static/js/main.b191c484.js"
+    "static/css/main.8cc238f3.css",
+    "static/js/main.b0345826.js"
   ]
 }
