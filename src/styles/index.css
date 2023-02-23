@@ -449,4 +449,23 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.cardMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cardMenu p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.cardMenu button {
+  cursor: pointer;
+  border: 1px solid #F6AA1C;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #BC3908;
 }/*# sourceMappingURL=index.css.map */

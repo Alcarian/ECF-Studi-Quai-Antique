@@ -5,6 +5,7 @@ import pâtes from "../img/Pâtes.jpg";
 import viande from "../img/viandes.jpg";
 import fruits from "../img/fruits.jpg";
 import mousse from "../img/moussechoc.jpg";
+import { NavLink } from "react-router-dom";
 
 export default function Lunch() {
   return (
@@ -57,7 +58,12 @@ export default function Lunch() {
       </div>
       <h1>Bon Appetit !</h1>
       <h4>Ouvrez la carte pour plus de précisions :</h4>
-      <button>La carte</button>
+      <NavLink
+        to="/CardMenu"
+        className={(nav) => (nav.isActive ? "nav-active" : "")}
+      >
+        <button>La carte</button>
+      </NavLink>
     </div>
   );
 }

@@ -4,7 +4,7 @@ export default function Drinks() {
   return (
     <div className="drinksCard">
       <h1>Nos Apéritifs</h1>
-      <h2>Soft</h2>
+      <h2>Softs</h2>
       <div className="order-boissons">
         <div className="boissons">
           <p>Verre d'eau</p>
