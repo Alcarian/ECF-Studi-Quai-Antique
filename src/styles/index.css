@@ -37,15 +37,15 @@ body {
   background: url(../../img/bg.jpg) center/cover;
 }
 .header nav {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
-  left: 10%;
   background: rgba(0, 0, 0, 0.548);
   margin: 0 auto;
+  z-index: 100;
 }
 
 .header-text {
@@ -119,19 +119,23 @@ h6 {
 .hamburger-menu.open ul {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-40px);
+  transform: translateY(61%);
   transition: transform 1.2s ease;
   background: rgba(0, 0, 0, 0.548);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 25px;
 }
 .hamburger-menu.open li {
-  padding-top: 8px;
+  padding: 8px;
+  text-align: center;
 }
 .hamburger-menu ul {
   margin: 0;
   padding: 0;
   opacity: 0;
   visibility: hidden;
-  margin-top: 140px;
 }
 .hamburger-menu li {
   color: rgb(243, 226, 221);
@@ -301,10 +305,10 @@ h6 {
   display: flex;
   align-items: center;
 }
-.lunchCard div img {
-  height: 70px;
+.lunchCard div .reglageImg {
   width: 70px;
-  display: block;
+  height: 70px;
+  aspect-ratio: 1/1;
 }
 .lunchCard div div {
   margin-left: 15px;
@@ -316,6 +320,56 @@ h6 {
   margin-bottom: 20px;
 }
 .lunchCard button {
+  cursor: pointer;
+  border: 1px solid #F6AA1C;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #BC3908;
+}
+
+.dinerCard {
+  background: rgb(243, 226, 221);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #BC3908;
+}
+.dinerCard h1 {
+  font-size: 2rem;
+  font-family: "font-Allura", sans-serif;
+  color: #BC3908;
+  margin: 20px 0;
+}
+.dinerCard h2 {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border-bottom: 1px solid #F6AA1C;
+}
+.dinerCard .diner {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.dinerCard p, .dinerCard h3 {
+  font-family: "font-roboto", serif;
+  font-size: 1rem;
+}
+.dinerCard p {
+  margin-left: 15px;
+}
+.dinerCard h3 {
+  margin-right: 15px;
+}
+.dinerCard h4 {
+  font-family: "font-Allura", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.dinerCard button {
   cursor: pointer;
   border: 1px solid #F6AA1C;
   border-radius: 10px;
@@ -337,12 +391,11 @@ h6 {
   font-family: "font-Allura", sans-serif;
   color: #BC3908;
   margin: 20px 0;
-  text-align: center;
 }
 .drinksCard h2 {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin: 20px 0;
   border-bottom: 1px solid #F6AA1C;
 }
 .drinksCard .order-boissons {

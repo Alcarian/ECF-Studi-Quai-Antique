@@ -3,7 +3,7 @@ import React from "react";
 export default function Drinks() {
   return (
     <div className="drinksCard">
-      <h1>Apéritifs</h1>
+      <h1>Nos Apéritifs</h1>
       <h2>Soft</h2>
       <div className="order-boissons">
         <div className="boissons">
@@ -42,7 +42,7 @@ export default function Drinks() {
           <h3>2€</h3>
         </div>
       </div>
-      <h1>Nos vins</h1>
+      <h1>Nos Vins</h1>
       <h2>Nos vins Blanc</h2>
       <div className="order-boissons">
         <div className="boissons">
@@ -73,8 +73,8 @@ export default function Drinks() {
           <h3>4€</h3>
         </div>
       </div>
+      <h1>Nos Digestifs</h1>
       <div className="order-boissons">
-        <h1>Nos Digestifs</h1>
         <div className="boissons">
           <p>Génépi</p>
           <h3>8€</h3>

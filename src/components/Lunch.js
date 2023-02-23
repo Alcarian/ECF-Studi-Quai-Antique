@@ -11,42 +11,46 @@ export default function Lunch() {
     <div className="lunchCard">
       <h1>Menu du jour</h1>
       <p>1 entrée + 1 plat + 1 déssert</p>
-      <h3>12€</h3>
+      <h3>19€</h3>
       <h2>Nos Entrées</h2>
       <div>
-        <img src={salade} alt="Salade composée" />
+        <img src={salade} alt="Salade composée" className="reglageImg" />
         <div>
           <p>Salade composée</p>
         </div>
       </div>
       <div>
-        <img src={croissant} alt="Croisant de charcuterie" />
+        <img
+          src={croissant}
+          alt="Croisant de charcuterie"
+          className="reglageImg"
+        />
         <div>
           <p>Croissant de charcuterie</p>
         </div>
       </div>
       <h2>Nos Plats</h2>
       <div>
-        <img src={pâtes} alt="Pâtes carbonara" />
+        <img src={pâtes} alt="Pâtes carbonara" className="reglageImg" />
         <div>
           <p>Pâtes carbonara</p>
         </div>
       </div>
       <div>
-        <img src={viande} alt="Viandes grillées" />
+        <img src={viande} alt="Viandes grillées" className="reglageImg" />
         <div>
           <p>Viandes du moment</p>
         </div>
       </div>
       <h2>Nos Desserts</h2>
       <div>
-        <img src={fruits} alt="Salade de fruits" />
+        <img src={fruits} alt="Salade de fruits" className="reglageImg" />
         <div>
           <p>Salade de fruits frais</p>
         </div>
       </div>
       <div>
-        <img src={mousse} alt="Mousse au chocolat" />
+        <img src={mousse} alt="Mousse au chocolat" className="reglageImg" />
         <div>
           <p>Mousse au chocolat du chef</p>
         </div>

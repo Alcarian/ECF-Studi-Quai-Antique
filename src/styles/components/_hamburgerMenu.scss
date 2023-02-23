@@ -55,13 +55,18 @@
       ul {
         opacity: 1;
         visibility: visible;
-        transform: translateX(-40px);
+        transform: translateY(61%);
         transition: transform 1.2s ease;
         background: rgba(0, 0, 0, 0.548);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 25px;
       }
 
       li {
-        padding-top: 8px;
+        padding: 8px;
+        text-align: center;
       }
     }
 
@@ -70,7 +75,6 @@
       padding: 0;
       opacity: 0;
       visibility: hidden;
-      margin-top: 140px;
     }
 
     li {
