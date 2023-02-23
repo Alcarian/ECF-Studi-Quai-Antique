@@ -1,0 +1,66 @@
+.drinksCard {
+    background: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed $color-orange;
+
+    h1 {
+        font-size: 2rem;
+        font-family: $font-1;
+        color: $color-orange;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+        border-bottom: 1px solid $color-yellow;
+    }
+
+    .order-boissons {
+        width: 90%;
+    }
+
+    .boissons {
+        width: 90%;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    p, h3 {
+        font-family: $font2;
+        font-size: 1rem;
+    }
+
+    p {
+        margin-left: 15px;
+    }
+
+    h3 {
+        margin-right: 15px;
+    }
+
+    h4 {
+        font-family: $font-1;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    button {
+        cursor: pointer;
+        border: 1px solid $color-yellow;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+        color: $color-orange;
+    }
+}
+
+
+
+

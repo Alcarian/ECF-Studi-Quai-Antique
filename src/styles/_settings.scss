@@ -31,3 +31,7 @@ $color-white: rgb(243, 226, 221);
 html { 
     scroll-behavior: smooth;
 }
+
+body {
+    background: $color-white;
+}

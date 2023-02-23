@@ -52,6 +52,8 @@ export default function Lunch() {
         </div>
       </div>
       <h1>Bon Appetit !</h1>
+      <h4>Ouvrez la carte pour plus de précisions :</h4>
+      <button>La carte</button>
     </div>
   );
 }

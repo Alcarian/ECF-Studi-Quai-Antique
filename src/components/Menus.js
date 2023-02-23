@@ -1,48 +1,74 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import plate from "../img/ic-plate.png";
 import Diner from "./Diner";
 import Drinks from "./Drinks";
 import Lunch from "./Lunch";
 
 export default function Menus() {
+  const [toggleState, setToggleState] = useState(1);
+
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
+
   return (
     <div className="menus" id="menu">
       <h2>Découvrez nos menus</h2>
       <span>
         <img src={plate} alt="icone" />
       </span>
-      <div className="navMenu">
-        <NavLink
-          to="/Lunch"
-          className={(lunch) => (lunch.isActive ? "nav-active" : "")}
-        >
-          <button>Déjeuner</button>
-        </NavLink>
-
-        <NavLink
-          to="/Diner"
-          className={(diner) => (diner.isActive ? "nav-active" : "")}
-        >
-          <button>Dîner</button>
-        </NavLink>
-
-        <NavLink
-          to="/Drinks"
-          className={(drink) => (drink.isActive ? "nav-active" : "")}
-        >
-          <button>Drinks</button>
-        </NavLink>
-      </div>
-      <div className="card">
-        <div className="lunchMenu">
-          <Lunch />
+      <div className="container">
+        <div className="bloc-tabs">
+          <button
+            className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+            onClick={() => toggleTab(1)}
+          >
+            Déjeuner
+          </button>
+          <button
+            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+            onClick={() => toggleTab(2)}
+          >
+            Dîner
+          </button>
+          <button
+            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+            onClick={() => toggleTab(3)}
+          >
+            Boissons
+          </button>
         </div>
-        <div className="dinerMenu">
-          <Diner />
-        </div>
-        <div className="drinkMenu">
-          <Drinks />
+
+        <div className="content-tabs">
+          <div
+            className={
+              toggleState === 1 ? "content  active-content" : "content"
+            }
+          >
+            <div>
+              <Lunch />
+            </div>
+          </div>
+
+          <div
+            className={
+              toggleState === 2 ? "content  active-content" : "content"
+            }
+          >
+            <div>
+              <Diner />
+            </div>
+          </div>
+
+          <div
+            className={
+              toggleState === 3 ? "content  active-content" : "content"
+            }
+          >
+            <div>
+              <Drinks />
+            </div>
+          </div>
         </div>
       </div>
     </div>

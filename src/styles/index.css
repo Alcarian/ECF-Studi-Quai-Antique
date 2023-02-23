@@ -20,6 +20,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: rgb(243, 226, 221);
+}
+
 .logo {
   font-family: "font-Allura", sans-serif;
   font-weight: 600;
@@ -209,48 +213,46 @@ h6 {
   margin-top: 30px;
 }
 
-.navMenu {
-  width: 80%;
+.container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  width: 90%;
   margin: 0 auto;
-  margin-bottom: 20px;
-}
-.navMenu a {
-  padding: 5px;
-}
-.navMenu a:hover {
-  transition: 0.6s;
-  transform: scale(1.1);
-}
-.navMenu a button {
-  cursor: pointer;
-  border: none;
-  font-size: 1.5rem;
-  transition: 0.6s;
-  font-family: "font-Allura", sans-serif;
-  background: rgba(0, 0, 0, 0.548);
-  border-radius: 10px;
-  color: #F6AA1C;
-  padding: 5px;
   margin-top: 30px;
 }
-.navMenu .nav-active {
+.container .bloc-tabs {
+  display: flex;
+}
+.container .bloc-tabs button {
+  border: none;
+  color: #F6AA1C;
+  font-family: "font-Allura", sans-serif;
+  font-size: 1.7rem;
+}
+.container .bloc-tabs .tabs {
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.521);
+  cursor: pointer;
   position: relative;
 }
-.navMenu .nav-active::after {
+.container .bloc-tabs .active-tabs {
+  position: relative;
+}
+.container .bloc-tabs .active-tabs::after {
   content: "";
-  height: 4px;
+  height: 3px;
   width: 0;
-  background: #BC3908;
   position: absolute;
   border-radius: 10px;
-  bottom: 0px;
+  background: #BC3908;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  -webkit-animation: anim 0.6s ease forwards;
-  animation: anim 1s ease forwards;
+  -webkit-animation: anim 0.3s ease forwards;
+  animation: anim 0.6s ease forwards;
 }
 @-webkit-keyframes anim {
   to {
@@ -262,13 +264,11 @@ h6 {
     width: 100%;
   }
 }
-
-.card {
-  width: 90%;
-  background: rgb(243, 226, 221);
-}
-.card .dinerMenu, .card .drinkMenu {
+.container .content-tabs .content {
   display: none;
+}
+.container .content-tabs .active-content {
+  display: block;
 }
 
 .lunchCard {
@@ -276,6 +276,8 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgb(243, 226, 221);
+  border: 1px dashed #BC3908;
 }
 .lunchCard h1 {
   font-size: 2rem;
@@ -302,10 +304,78 @@ h6 {
 .lunchCard div img {
   height: 70px;
   width: 70px;
+  display: block;
 }
 .lunchCard div div {
   margin-left: 15px;
   justify-content: center;
+}
+.lunchCard h4 {
+  font-family: "font-Allura", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.lunchCard button {
+  cursor: pointer;
+  border: 1px solid #F6AA1C;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #BC3908;
+}
+
+.drinksCard {
+  background: rgb(243, 226, 221);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #BC3908;
+}
+.drinksCard h1 {
+  font-size: 2rem;
+  font-family: "font-Allura", sans-serif;
+  color: #BC3908;
+  margin: 20px 0;
+  text-align: center;
+}
+.drinksCard h2 {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  border-bottom: 1px solid #F6AA1C;
+}
+.drinksCard .order-boissons {
+  width: 90%;
+}
+.drinksCard .boissons {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.drinksCard p, .drinksCard h3 {
+  font-family: "font-roboto", serif;
+  font-size: 1rem;
+}
+.drinksCard p {
+  margin-left: 15px;
+}
+.drinksCard h3 {
+  margin-right: 15px;
+}
+.drinksCard h4 {
+  font-family: "font-Allura", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.drinksCard button {
+  cursor: pointer;
+  border: 1px solid #F6AA1C;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #BC3908;
 }
 
 .top {
