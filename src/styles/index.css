@@ -281,7 +281,7 @@ h6 {
   justify-content: center;
   align-items: center;
   background: rgb(243, 226, 221);
-  border: 1px dashed #BC3908;
+  border: 1px dashed #621708;
 }
 .lunchCard h1 {
   font-size: 2rem;
@@ -334,7 +334,7 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px dashed #BC3908;
+  border: 1px dashed #621708;
 }
 .dinerCard h1 {
   font-size: 2rem;
@@ -384,7 +384,7 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px dashed #BC3908;
+  border: 1px dashed #621708;
 }
 .drinksCard h1 {
   font-size: 2rem;
@@ -468,4 +468,115 @@ h6 {
   padding: 10px;
   margin-bottom: 20px;
   color: #BC3908;
+}
+
+.timeOpen {
+  background: #21201e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timeOpen .timeContainer {
+  background: black;
+  width: 90%;
+  margin-top: 20px;
+}
+.timeOpen .timeContainer .border {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #621708;
+  width: 90%;
+  margin: 15px;
+}
+.timeOpen .timeContainer .border h2 {
+  color: #BC3908;
+  font-family: "font-Allura", sans-serif;
+  margin-top: 30px;
+  border-bottom: 1px solid #F6AA1C;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+.timeOpen .timeContainer .border span {
+  margin-top: 40px;
+}
+.timeOpen .timeContainer .border h3 {
+  color: #BC3908;
+  font-family: "font-roboto", serif;
+  margin: 40px 0;
+  border-bottom: 1px solid #F6AA1C;
+  font-weight: lighter;
+}
+.timeOpen .timeContainer .border p {
+  color: rgb(243, 226, 221);
+  font-family: "font-roboto", serif;
+}
+.timeOpen .timeContainer .border .phone {
+  cursor: pointer;
+}
+
+.form-infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  background: #21201e;
+}
+.form-infos .form-infos-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(243, 226, 221);
+  margin: 10px;
+}
+.form-infos .form-infos-container h2 {
+  font-family: "font-Allura", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 100;
+  color: #BC3908;
+  text-align: center;
+  margin: 20px 0;
+}
+.form-infos .form-infos-container h3 {
+  color: #21201e;
+  margin-top: -18px;
+  font-family: "font-roboto", serif;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-infos .form-infos-container span {
+  margin-top: 20px;
+}
+.form-infos .form-infos-container .form-inputs {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 30px;
+}
+.form-infos .form-infos-container .form-inputs > * {
+  padding: 10px 0;
+  margin: 10px 0;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #21201e;
+}
+.form-infos .form-infos-container button {
+  border: none;
+  border-radius: 50px;
+  background: #21201e;
+  color: #BC3908;
+  padding: 16px 34px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-bottom: 20px;
+}
+.form-infos .form-infos-container button:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
 }/*# sourceMappingURL=index.css.map */

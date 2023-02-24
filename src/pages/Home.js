@@ -1,8 +1,10 @@
 import React from "react";
+import Form from "../components/Form";
 import Header from "../components/Header";
 import Menus from "../components/Menus";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
+import TimeOpen from "../components/TimeOpen";
 
 const Home = () => {
   return (
@@ -15,6 +17,10 @@ const Home = () => {
       <main>
         <Menus />
       </main>
+      <div>
+        <TimeOpen />
+        <Form />
+      </div>
       <div className="top">
         <a href="#accueil">
           <i className="fa-solid fa-arrow-up"></i>

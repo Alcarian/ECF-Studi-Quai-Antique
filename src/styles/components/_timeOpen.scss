@@ -1,0 +1,55 @@
+.timeOpen {
+    background: $color-black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .timeContainer {
+        background: $color-dark;
+        width: 90%;
+        margin-top: 20px;
+        
+        .border {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed $color-brown;
+            width: 90%;
+            margin: 15px;
+
+            h2 {
+                color: $color-orange;
+                font-family: $font-1;
+                margin-top: 30px;
+                border-bottom: 1px solid $color-yellow;
+                font-size: 2rem;
+                font-weight: lighter;
+            }
+        
+            span {
+                margin-top: 40px;
+            }
+
+            h3 {
+                color: $color-orange;
+                font-family: $font2;
+                margin: 40px 0;
+                border-bottom: 1px solid $color-yellow;
+                font-weight: lighter;
+            }
+
+            p {
+                color: $color-white;
+                font-family: $font2;
+            }
+
+            .phone {
+                cursor: pointer;
+            }
+        }
+    }
+
+   
+}
