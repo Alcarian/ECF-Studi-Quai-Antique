@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ECF-Studi-Quai-Antique/static/css/main.7cce8c52.css",
-    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.9b8b2194.js",
+    "main.css": "/ECF-Studi-Quai-Antique/static/css/main.5f03cd20.css",
+    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.8cec67fd.js",
     "static/media/poulet5.jpg": "/ECF-Studi-Quai-Antique/static/media/poulet5.b933155b4010a038f955.jpg",
     "static/media/charcuterie4.jpg": "/ECF-Studi-Quai-Antique/static/media/charcuterie4.b2797cfbd072fce44fa5.jpg",
     "static/media/bg.jpg": "/ECF-Studi-Quai-Antique/static/media/bg.25f30070466f3efec9fc.jpg",
@@ -18,11 +18,11 @@
     "static/media/Croissant.jpg": "/ECF-Studi-Quai-Antique/static/media/Croissant.f8b27339c428a43199cf.jpg",
     "static/media/fruits.jpg": "/ECF-Studi-Quai-Antique/static/media/fruits.6535c59b22adef559bf5.jpg",
     "index.html": "/ECF-Studi-Quai-Antique/index.html",
-    "main.7cce8c52.css.map": "/ECF-Studi-Quai-Antique/static/css/main.7cce8c52.css.map",
-    "main.9b8b2194.js.map": "/ECF-Studi-Quai-Antique/static/js/main.9b8b2194.js.map"
+    "main.5f03cd20.css.map": "/ECF-Studi-Quai-Antique/static/css/main.5f03cd20.css.map",
+    "main.8cec67fd.js.map": "/ECF-Studi-Quai-Antique/static/js/main.8cec67fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cce8c52.css",
-    "static/js/main.9b8b2194.js"
+    "static/css/main.5f03cd20.css",
+    "static/js/main.8cec67fd.js"
   ]
 }
