@@ -7,7 +7,7 @@ export default function Drinks() {
       <h2>Softs</h2>
       <div className="order-boissons">
         <div className="boissons">
-          <p>Verre d'eau</p>
+          <p>Eau minérale</p>
           <h3>1€</h3>
         </div>
         <div className="boissons">

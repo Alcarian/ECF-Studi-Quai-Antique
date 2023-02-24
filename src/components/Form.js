@@ -3,9 +3,11 @@ import plate from "../img/ic-plate.png";
 
 export default function Form() {
   return (
-    <div className="form-infos">
+    <div className="form-infos" id="résa">
       <div className="form-infos-container">
         <h2>Réservation</h2>
+        <button id="client">Connexion ?</button>
+        <button>Devenir client ?</button>
         <h3>RESERVER EN LIGNE</h3>
         <span>
           <img src={plate} alt="icone" />

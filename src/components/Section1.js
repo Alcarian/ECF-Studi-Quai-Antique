@@ -18,7 +18,7 @@ const Section1 = () => {
         voluptate nam recusandae sint.
       </p>
       <img src={avatar1} alt="chef" />
-      <h3>Jaimes Lafondue</h3>
+      <h3>Le chef Arnaud Michant</h3>
     </div>
   );
 };

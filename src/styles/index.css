@@ -119,7 +119,7 @@ h6 {
 .hamburger-menu.open ul {
   opacity: 1;
   visibility: visible;
-  transform: translateY(61%);
+  transform: translateY(63%);
   transition: transform 1.2s ease;
   background: rgba(0, 0, 0, 0.548);
   display: flex;
@@ -128,8 +128,8 @@ h6 {
   right: 25px;
 }
 .hamburger-menu.open li {
-  padding: 8px;
   text-align: center;
+  padding: 5px;
 }
 .hamburger-menu ul {
   margin: 0;
@@ -137,11 +137,11 @@ h6 {
   opacity: 0;
   visibility: hidden;
 }
-.hamburger-menu li {
+.hamburger-menu a {
   color: rgb(243, 226, 221);
   font-family: "font-roboto", serif;
 }
-.hamburger-menu li:hover {
+.hamburger-menu a:hover {
   color: #F6AA1C;
 }
 
@@ -176,12 +176,15 @@ h6 {
 .section-1 img {
   width: 80px;
   height: 80px;
-  margin: 40px 0;
+  margin-top: 40px;
+  margin-bottom: 15px;
   border-radius: 50%;
 }
 .section-1 h3 {
-  font-family: "font-roboto", serif;
+  font-family: "font-Allura", sans-serif;
   margin-bottom: 40px;
+  font-weight: lighter;
+  font-size: 1.3rem;
 }
 
 .slide-container {
@@ -544,7 +547,6 @@ h6 {
 }
 .form-infos .form-infos-container h3 {
   color: #21201e;
-  margin-top: -18px;
   font-family: "font-roboto", serif;
   font-size: 1.3rem;
   text-align: center;
@@ -570,7 +572,7 @@ h6 {
   border-radius: 50px;
   background: #21201e;
   color: #BC3908;
-  padding: 16px 34px;
+  padding: 10px 28px;
   letter-spacing: 4px;
   font-weight: 700;
   cursor: pointer;

@@ -3,13 +3,13 @@ import React from "react";
 export default function Footer() {
   return (
     <div className="footer">
-      <h2>Quai Antique</h2>
+      <h2>Le Quai Antique</h2>
       <div className="text">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat esse
-          rerum in minus odit itaque voluptas provident aliquam vel est,
-          consequuntur porro laboriosam, iste quos. Nemo cupiditate ipsa iusto
-          omnis!
+          Le restaurant le Quai Antique vous remercie de votre visite et espère
+          vous avoir servis un repas de qualité comme il nous tient à coeur de
+          le faire. En espérant vous revoir bientôt, passez une agréable journée
+          !
         </p>
       </div>
       <h2>Nous suivre :</h2>
