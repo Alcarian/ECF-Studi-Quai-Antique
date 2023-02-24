@@ -148,13 +148,12 @@ h6 {
 .section-1 {
   width: 90%;
   border: 1px dashed #621708;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .section-1 h2 {
   color: #621708;
@@ -196,7 +195,7 @@ h6 {
   background-size: cover;
   height: 400px;
   width: 90%;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 .menus {
@@ -241,6 +240,7 @@ h6 {
   background: rgba(0, 0, 0, 0.521);
   cursor: pointer;
   position: relative;
+  border-radius: 5px;
 }
 .container .bloc-tabs .active-tabs {
   position: relative;
@@ -432,8 +432,6 @@ h6 {
 }
 
 .top {
-  width: 100%;
-  height: 70px;
   position: relative;
 }
 .top i {
@@ -444,7 +442,7 @@ h6 {
   border-radius: 50px;
   color: #BC3908;
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
   right: 10px;
   display: flex;
   align-items: center;
@@ -481,6 +479,7 @@ h6 {
   background: black;
   width: 90%;
   margin-top: 20px;
+  border-radius: 5px;
 }
 .timeOpen .timeContainer .border {
   display: flex;
@@ -488,6 +487,7 @@ h6 {
   justify-content: center;
   align-items: center;
   border: 1px dashed #621708;
+  border-radius: 5px;
   width: 90%;
   margin: 15px;
 }
@@ -532,6 +532,7 @@ h6 {
   align-items: center;
   background: rgb(243, 226, 221);
   margin: 10px;
+  border-radius: 5px;
 }
 .form-infos .form-infos-container h2 {
   font-family: "font-Allura", sans-serif;
@@ -579,4 +580,45 @@ h6 {
 .form-infos .form-infos-container button:hover {
   transform: scale(1.1);
   transition: 0.4s;
+}
+
+.footer {
+  background: #21201e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer h2 {
+  color: #BC3908;
+  font-family: "font-Allura", sans-serif;
+  font-weight: lighter;
+  border-bottom: 1px solid #F6AA1C;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.footer .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer p {
+  width: 90%;
+  text-align: center;
+  color: rgb(243, 226, 221);
+}
+.footer .social {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.footer .social i {
+  font-size: 1.5rem;
+}
+.footer h3 {
+  font-size: 1rem;
+  font-family: "font-Allura", sans-serif;
+  margin-bottom: 10px;
+  color: #621708;
 }/*# sourceMappingURL=index.css.map */

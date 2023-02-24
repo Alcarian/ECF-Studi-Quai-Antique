@@ -1,13 +1,12 @@
 .section-1 {
     width: 90%;
     border: 1px dashed $color-brown;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin: 0 auto;
+    margin: 20px auto;
 
     h2 {
         color: $color-brown;

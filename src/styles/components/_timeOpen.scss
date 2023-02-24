@@ -9,6 +9,7 @@
         background: $color-dark;
         width: 90%;
         margin-top: 20px;
+        border-radius: 5px;
         
         .border {
             display: flex;
@@ -16,6 +17,7 @@
             justify-content: center;
             align-items: center;
             border: 1px dashed $color-brown;
+            border-radius: 5px;
             width: 90%;
             margin: 15px;
 

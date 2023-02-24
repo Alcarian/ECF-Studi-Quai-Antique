@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 import Form from "../components/Form";
 import Header from "../components/Header";
 import Menus from "../components/Menus";
@@ -21,6 +22,7 @@ const Home = () => {
         <TimeOpen />
         <Form />
       </div>
+      <Footer />
       <div className="top">
         <a href="#accueil">
           <i className="fa-solid fa-arrow-up"></i>
