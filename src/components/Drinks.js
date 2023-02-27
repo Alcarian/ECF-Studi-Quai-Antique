@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Drinks() {
   return (
@@ -95,7 +96,12 @@ export default function Drinks() {
         </div>
         <h1>A votre santé !</h1>
         <h4>Ouvrez la carte pour plus de précisions :</h4>
-        <button>La carte </button>
+        <NavLink
+          to="/CardMenu"
+          className={(nav) => (nav.isActive ? "nav-active" : "")}
+        >
+          <button>La carte</button>
+        </NavLink>
       </div>
     </div>
   );
