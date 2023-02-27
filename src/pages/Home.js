@@ -11,14 +11,14 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="sections">
         <Section1 />
         <Section2 />
       </div>
       <main>
         <Menus />
       </main>
-      <div>
+      <div className="timeMenus">
         <TimeOpen />
         <Form />
       </div>

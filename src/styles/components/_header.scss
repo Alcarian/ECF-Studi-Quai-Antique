@@ -12,6 +12,10 @@
         background: rgba(0, 0, 0, 0.548);
         margin: 0 auto;
         z-index: 100;
+
+        // @media screen and (min-width: 1000px){
+        //     justify-content: start;
+        // }
     }
 }
 
@@ -34,10 +38,26 @@
 
 h1 {
     font-size: 4rem;
+
+    @media screen and (min-width: 430px) {
+        font-size: 6rem;
+    }
+
+    @media screen and (min-width: 625px) {
+        font-size: 8rem;
+    }
 }
 
 h6 {
     font-size: 1.5rem;
+
+    @media screen and (min-width: 430px) {
+        font-size: 2rem;
+    }
+
+    @media screen and (min-width: 625px) {
+        font-size: 3rem;
+    }
 }
 
 

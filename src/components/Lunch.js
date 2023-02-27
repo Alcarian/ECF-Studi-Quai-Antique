@@ -10,60 +10,62 @@ import { NavLink } from "react-router-dom";
 export default function Lunch() {
   return (
     <div className="lunchCard">
-      <h1>Menu du jour</h1>
-      <p>1 entrée + 1 plat + 1 déssert</p>
-      <h3>19€</h3>
-      <h2>Nos Entrées</h2>
-      <div>
-        <img src={salade} alt="Salade composée" className="reglageImg" />
+      <div className="borderLunch">
+        <h1>Menu du jour</h1>
+        <p>1 entrée + 1 plat + 1 déssert</p>
+        <h3>19€</h3>
+        <h2>Nos Entrées</h2>
         <div>
-          <p>Salade composée</p>
+          <img src={salade} alt="Salade composée" className="reglageImg" />
+          <div>
+            <p>Salade composée</p>
+          </div>
         </div>
-      </div>
-      <div>
-        <img
-          src={croissant}
-          alt="Croisant de charcuterie"
-          className="reglageImg"
-        />
         <div>
-          <p>Croissant de charcuterie</p>
+          <img
+            src={croissant}
+            alt="Croisant de charcuterie"
+            className="reglageImg"
+          />
+          <div>
+            <p>Croissant de charcuterie</p>
+          </div>
         </div>
-      </div>
-      <h2>Nos Plats</h2>
-      <div>
-        <img src={pâtes} alt="Pâtes carbonara" className="reglageImg" />
+        <h2>Nos Plats</h2>
         <div>
-          <p>Pâtes carbonara</p>
+          <img src={pâtes} alt="Pâtes carbonara" className="reglageImg" />
+          <div>
+            <p>Pâtes carbonara</p>
+          </div>
         </div>
-      </div>
-      <div>
-        <img src={viande} alt="Viandes grillées" className="reglageImg" />
         <div>
-          <p>Viandes du moment</p>
+          <img src={viande} alt="Viandes grillées" className="reglageImg" />
+          <div>
+            <p>Viandes du moment</p>
+          </div>
         </div>
-      </div>
-      <h2>Nos Desserts</h2>
-      <div>
-        <img src={fruits} alt="Salade de fruits" className="reglageImg" />
+        <h2>Nos Desserts</h2>
         <div>
-          <p>Salade de fruits frais</p>
+          <img src={fruits} alt="Salade de fruits" className="reglageImg" />
+          <div>
+            <p>Salade de fruits frais</p>
+          </div>
         </div>
-      </div>
-      <div>
-        <img src={mousse} alt="Mousse au chocolat" className="reglageImg" />
         <div>
-          <p>Mousse au chocolat du chef</p>
+          <img src={mousse} alt="Mousse au chocolat" className="reglageImg" />
+          <div>
+            <p>Mousse au chocolat du chef</p>
+          </div>
         </div>
+        <h1>Bon Appetit !</h1>
+        <h4>Ouvrez la carte pour plus de précisions :</h4>
+        <NavLink
+          to="/CardMenu"
+          className={(nav) => (nav.isActive ? "nav-active" : "")}
+        >
+          <button>La carte</button>
+        </NavLink>
       </div>
-      <h1>Bon Appetit !</h1>
-      <h4>Ouvrez la carte pour plus de précisions :</h4>
-      <NavLink
-        to="/CardMenu"
-        className={(nav) => (nav.isActive ? "nav-active" : "")}
-      >
-        <button>La carte</button>
-      </NavLink>
     </div>
   );
 }

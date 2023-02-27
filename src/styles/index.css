@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  background: rgb(243, 226, 221);
+  background: #21201e;
 }
 
 .logo {
@@ -66,9 +66,29 @@ body {
 h1 {
   font-size: 4rem;
 }
+@media screen and (min-width: 430px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 625px) {
+  h1 {
+    font-size: 8rem;
+  }
+}
 
 h6 {
   font-size: 1.5rem;
+}
+@media screen and (min-width: 430px) {
+  h6 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 625px) {
+  h6 {
+    font-size: 3rem;
+  }
 }
 
 .hamburger-menu {
@@ -84,6 +104,11 @@ h6 {
   transition: transform 0.9s ease;
   margin-right: 5px;
 }
+@media screen and (min-width: 1000px) {
+  .hamburger-menu {
+    width: 80%;
+  }
+}
 .hamburger-menu .line {
   position: absolute;
   width: 100%;
@@ -91,6 +116,11 @@ h6 {
   border-radius: 5px;
   background-color: rgb(243, 226, 221);
   transition: transform 0.9s ease;
+}
+@media screen and (min-width: 1000px) {
+  .hamburger-menu .line {
+    display: none;
+  }
 }
 .hamburger-menu:before, .hamburger-menu:after {
   content: "";
@@ -100,6 +130,11 @@ h6 {
   border-radius: 5px;
   background-color: rgb(243, 226, 221);
   transition: transform 0.9s ease;
+}
+@media screen and (min-width: 1000px) {
+  .hamburger-menu:before, .hamburger-menu:after {
+    display: none;
+  }
 }
 .hamburger-menu:before {
   transform: translateY(-6px);
@@ -137,6 +172,18 @@ h6 {
   opacity: 0;
   visibility: hidden;
 }
+@media screen and (min-width: 1000px) {
+  .hamburger-menu ul {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hamburger-menu ul li {
+    margin: 0 20px;
+  }
+}
 .hamburger-menu a {
   color: rgb(243, 226, 221);
   font-family: "font-roboto", serif;
@@ -147,6 +194,7 @@ h6 {
 
 .section-1 {
   width: 90%;
+  background: rgb(243, 226, 221);
   border: 1px dashed #621708;
   border-radius: 5px;
   display: flex;
@@ -196,9 +244,15 @@ h6 {
   align-items: center;
   justify-content: center;
   background-size: cover;
+  border-radius: 5px;
   height: 400px;
   width: 90%;
   margin: 15px auto;
+}
+@media screen and (min-width: 625px) {
+  .imgStyle {
+    height: 600px;
+  }
 }
 
 .menus {
@@ -214,6 +268,12 @@ h6 {
   font-size: 2rem;
   margin-top: 40px;
   font-weight: 200;
+  border-bottom: 1px solid #F6AA1C;
+}
+@media screen and (min-width: 1000px) {
+  .menus h2 {
+    font-size: 2.5rem;
+  }
 }
 .menus span {
   margin-top: 30px;
@@ -235,6 +295,11 @@ h6 {
   color: #F6AA1C;
   font-family: "font-Allura", sans-serif;
   font-size: 1.7rem;
+}
+@media screen and (min-width: 1000px) {
+  .container .bloc-tabs button {
+    font-size: 2.2rem;
+  }
 }
 .container .bloc-tabs .tabs {
   padding: 15px;
@@ -279,56 +344,114 @@ h6 {
 }
 
 .lunchCard {
+  background: rgb(243, 226, 221);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(243, 226, 221);
-  border: 1px dashed #621708;
+  border-radius: 5px;
 }
-.lunchCard h1 {
+.lunchCard .borderLunch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  border: 1px dashed #621708;
+  margin: 20px 0;
+}
+@media screen and (min-width: 680px) {
+  .lunchCard .borderLunch {
+    width: 70%;
+  }
+}
+.lunchCard .borderLunch h1 {
   font-size: 2rem;
   font-family: "font-Allura", sans-serif;
   color: #BC3908;
   margin: 30px 0;
 }
-.lunchCard p {
-  font-family: "font-roboto", serif;
+@media screen and (min-width: 680px) {
+  .lunchCard .borderLunch h1 {
+    font-size: 2.8rem;
+  }
 }
-.lunchCard h3 {
+.lunchCard .borderLunch p {
+  font-family: "font-roboto", serif;
+  text-align: center;
+}
+@media screen and (min-width: 680px) {
+  .lunchCard .borderLunch p {
+    font-size: 1.2rem;
+  }
+}
+.lunchCard .borderLunch h3 {
   margin-top: 30px;
   font-size: 2rem;
 }
-.lunchCard h2 {
+@media screen and (min-width: 680px) {
+  .lunchCard .borderLunch h3 {
+    font-size: 2.3rem;
+  }
+}
+.lunchCard .borderLunch h2 {
   border-bottom: 1px solid #F6AA1C;
   margin: 30px 0;
 }
-.lunchCard div {
+@media screen and (min-width: 680px) {
+  .lunchCard .borderLunch h2 {
+    font-size: 2.3rem;
+  }
+}
+.lunchCard .borderLunch div {
   width: 90%;
   display: flex;
   align-items: center;
 }
-.lunchCard div .reglageImg {
+.lunchCard .borderLunch div .reglageImg {
   width: 70px;
   height: 70px;
   aspect-ratio: 1/1;
+  margin: 5px;
 }
-.lunchCard div div {
+@media screen and (min-width: 680px) {
+  .lunchCard .borderLunch div .reglageImg {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .lunchCard .borderLunch div .reglageImg {
+    width: 150px;
+    height: 150px;
+  }
+}
+.lunchCard .borderLunch div div {
   margin-left: 15px;
   justify-content: center;
 }
-.lunchCard h4 {
+.lunchCard .borderLunch h4 {
   font-family: "font-Allura", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
-.lunchCard button {
+.lunchCard .borderLunch button {
   cursor: pointer;
   border: 1px solid #F6AA1C;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 20px;
   color: #BC3908;
+}
+@media screen and (min-width: 680px) {
+  .lunchCard .borderLunch button {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .lunchCard .borderLunch button {
+    font-size: 1.3rem;
+  }
 }
 
 .dinerCard {
@@ -337,48 +460,87 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px dashed #621708;
+  border-radius: 5px;
 }
-.dinerCard h1 {
+.dinerCard .borderDiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  border: 1px dashed #621708;
+  margin: 20px 0;
+}
+@media screen and (min-width: 680px) {
+  .dinerCard .borderDiner {
+    width: 70%;
+  }
+}
+.dinerCard .borderDiner h1 {
   font-size: 2rem;
   font-family: "font-Allura", sans-serif;
   color: #BC3908;
   margin: 20px 0;
 }
-.dinerCard h2 {
+@media screen and (min-width: 680px) {
+  .dinerCard .borderDiner h1 {
+    font-size: 2.8rem;
+  }
+}
+.dinerCard .borderDiner h2 {
   display: flex;
   justify-content: center;
   margin: 20px 0;
   border-bottom: 1px solid #F6AA1C;
 }
-.dinerCard .diner {
+@media screen and (min-width: 680px) {
+  .dinerCard .borderDiner h2 {
+    font-size: 2.3rem;
+  }
+}
+.dinerCard .borderDiner .diner {
   width: 90%;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
 }
-.dinerCard p, .dinerCard h3 {
+.dinerCard .borderDiner p, .dinerCard .borderDiner h3 {
   font-family: "font-roboto", serif;
   font-size: 1rem;
 }
-.dinerCard p {
+.dinerCard .borderDiner p {
   margin-left: 15px;
 }
-.dinerCard h3 {
+@media screen and (min-width: 680px) {
+  .dinerCard .borderDiner p {
+    font-size: 1.2rem;
+  }
+}
+.dinerCard .borderDiner h3 {
   margin-right: 15px;
 }
-.dinerCard h4 {
+.dinerCard .borderDiner h4 {
   font-family: "font-Allura", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
-.dinerCard button {
+.dinerCard .borderDiner button {
   cursor: pointer;
   border: 1px solid #F6AA1C;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 20px;
   color: #BC3908;
+}
+@media screen and (min-width: 680px) {
+  .dinerCard .borderDiner button {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .dinerCard .borderDiner button {
+    font-size: 1.3rem;
+  }
 }
 
 .drinksCard {
@@ -387,51 +549,110 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px dashed #621708;
+  border-radius: 5px;
 }
-.drinksCard h1 {
+.drinksCard .borderDrink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  border: 1px dashed #621708;
+  margin: 20px 0;
+}
+@media screen and (min-width: 680px) {
+  .drinksCard .borderDrink {
+    width: 70%;
+  }
+}
+.drinksCard .borderDrink h1 {
   font-size: 2rem;
   font-family: "font-Allura", sans-serif;
   color: #BC3908;
   margin: 20px 0;
 }
-.drinksCard h2 {
+@media screen and (min-width: 680px) {
+  .drinksCard .borderDrink h1 {
+    font-size: 2.8rem;
+  }
+}
+.drinksCard .borderDrink h2 {
   display: flex;
   justify-content: center;
   margin: 20px 0;
   border-bottom: 1px solid #F6AA1C;
 }
-.drinksCard .order-boissons {
+@media screen and (min-width: 680px) {
+  .drinksCard .borderDrink h2 {
+    font-size: 2.3rem;
+  }
+}
+.drinksCard .borderDrink .order-boissons {
   width: 90%;
 }
-.drinksCard .boissons {
+.drinksCard .borderDrink .boissons {
   width: 90%;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
 }
-.drinksCard p, .drinksCard h3 {
+.drinksCard .borderDrink p, .drinksCard .borderDrink h3 {
   font-family: "font-roboto", serif;
   font-size: 1rem;
 }
-.drinksCard p {
+.drinksCard .borderDrink p {
   margin-left: 15px;
 }
-.drinksCard h3 {
+@media screen and (min-width: 680px) {
+  .drinksCard .borderDrink p {
+    font-size: 1.2rem;
+  }
+}
+.drinksCard .borderDrink h3 {
   margin-right: 15px;
 }
-.drinksCard h4 {
+.drinksCard .borderDrink h4 {
   font-family: "font-Allura", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
-.drinksCard button {
+.drinksCard .borderDrink button {
   cursor: pointer;
   border: 1px solid #F6AA1C;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 20px;
   color: #BC3908;
+}
+@media screen and (min-width: 680px) {
+  .drinksCard .borderDrink button {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .drinksCard .borderDrink button {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .sections {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+.timeMenus {
+  background: #21201e;
+}
+@media screen and (min-width: 1000px) {
+  .timeMenus {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 20px auto;
+  }
 }
 
 .top {
@@ -484,6 +705,11 @@ h6 {
   margin-top: 20px;
   border-radius: 5px;
 }
+@media screen and (min-width: 625px) {
+  .timeOpen .timeContainer {
+    margin-top: 0;
+  }
+}
 .timeOpen .timeContainer .border {
   display: flex;
   flex-direction: column;
@@ -492,7 +718,7 @@ h6 {
   border: 1px dashed #621708;
   border-radius: 5px;
   width: 90%;
-  margin: 15px;
+  margin: 20px auto;
 }
 .timeOpen .timeContainer .border h2 {
   color: #BC3908;
@@ -512,9 +738,20 @@ h6 {
   border-bottom: 1px solid #F6AA1C;
   font-weight: lighter;
 }
+@media screen and (min-width: 625px) {
+  .timeOpen .timeContainer .border h3 {
+    margin: 60px 0;
+    font-size: 1.1rem;
+  }
+}
 .timeOpen .timeContainer .border p {
   color: rgb(243, 226, 221);
   font-family: "font-roboto", serif;
+}
+@media screen and (min-width: 625px) {
+  .timeOpen .timeContainer .border p {
+    font-size: 1rem;
+  }
 }
 .timeOpen .timeContainer .border .phone {
   cursor: pointer;
@@ -527,15 +764,32 @@ h6 {
   padding: 30px 0;
   background: #21201e;
 }
+@media screen and (min-width: 1000px) {
+  .form-infos {
+    padding: 0;
+  }
+}
 .form-infos .form-infos-container {
   width: 90%;
+  background: rgb(243, 226, 221);
+  margin-top: 20px;
+  border-radius: 5px;
+}
+@media screen and (min-width: 1000px) {
+  .form-infos .form-infos-container {
+    height: 100%;
+    margin: 0;
+  }
+}
+.form-infos .form-infos-container .borderForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(243, 226, 221);
-  margin: 10px;
+  border: 1px dashed #621708;
   border-radius: 5px;
+  width: 90%;
+  margin: 20px auto;
 }
 .form-infos .form-infos-container h2 {
   font-family: "font-Allura", sans-serif;
@@ -543,7 +797,7 @@ h6 {
   font-weight: 100;
   color: #BC3908;
   text-align: center;
-  margin: 20px 0;
+  margin: 30px 0;
 }
 .form-infos .form-infos-container h3 {
   color: #21201e;
@@ -559,9 +813,14 @@ h6 {
   grid-template-columns: 1fr;
   margin-bottom: 30px;
 }
+@media screen and (min-width: 620px) {
+  .form-infos .form-infos-container .form-inputs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .form-infos .form-infos-container .form-inputs > * {
   padding: 10px 0;
-  margin: 10px 0;
+  margin: 10px;
   background: none;
   outline: none;
   border: none;
@@ -577,7 +836,13 @@ h6 {
   font-weight: 700;
   cursor: pointer;
   transition: 0.2s;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 1000px) {
+  .form-infos .form-infos-container button {
+    margin: 20px;
+    margin-bottom: 35px;
+  }
 }
 .form-infos .form-infos-container button:hover {
   transform: scale(1.1);
@@ -590,6 +855,20 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-top: 1px dashed #621708;
+}
+.footer .footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1000px) {
+  .footer .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 .footer h2 {
   color: #BC3908;
@@ -601,22 +880,45 @@ h6 {
 }
 .footer .text {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.footer p {
+@media screen and (min-width: 1000px) {
+  .footer .text {
+    width: 50%;
+  }
+}
+.footer .text p {
   width: 90%;
   text-align: center;
   color: rgb(243, 226, 221);
+  margin-bottom: 20px;
 }
 .footer .social {
   display: flex;
-  width: 70%;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1000px) {
+  .footer .social {
+    width: 50%;
+  }
+}
+.footer .social .social-icons {
+  display: flex;
+  justify-content: space-between;
 }
 .footer .social i {
   font-size: 1.5rem;
+  margin: 0 20px;
+}
+@media screen and (min-width: 1000px) {
+  .footer .social i {
+    margin: 0 50px;
+  }
 }
 .footer h3 {
   font-size: 1rem;

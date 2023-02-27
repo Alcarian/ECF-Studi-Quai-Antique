@@ -34,6 +34,9 @@ export default function HamburgerMenu() {
         <li>
           <a href="#client">Devenir client ?</a>
         </li>
+        <li>
+          <a href="#footer">Social</a>
+        </li>
       </ul>
     </div>
   );

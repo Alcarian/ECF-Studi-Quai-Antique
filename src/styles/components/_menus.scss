@@ -11,6 +11,11 @@
         font-size: 2rem;
         margin-top: 40px;
         font-weight: 200;
+        border-bottom: 1px solid $color-yellow;
+
+        @media screen and (min-width: 1000px){
+            font-size: 2.5rem;
+        }
     }
 
     span {
@@ -35,6 +40,10 @@
             color: $color-yellow;
             font-family: $font-1;
             font-size: 1.7rem;
+
+            @media screen and (min-width: 1000px){
+                font-size: 2.2rem;
+            }
         }
     
 
