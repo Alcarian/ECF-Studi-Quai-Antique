@@ -44,7 +44,7 @@ export default function Lunch() {
             <p>Viandes du moment</p>
           </div>
         </div>
-        <h2>Nos Desserts</h2>
+        <h2>Nos Désserts</h2>
         <div>
           <img src={fruits} alt="Salade de fruits" className="reglageImg" />
           <div>
@@ -54,7 +54,7 @@ export default function Lunch() {
         <div>
           <img src={mousse} alt="Mousse au chocolat" className="reglageImg" />
           <div>
-            <p>Mousse au chocolat du chef</p>
+            <p>Mousse au chocolat du Chef</p>
           </div>
         </div>
         <h1>Bon Appetit !</h1>

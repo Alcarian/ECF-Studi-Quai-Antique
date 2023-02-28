@@ -1,8 +1,6 @@
 
 .form-infos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include childCenter;
     padding: 30px 0;
     background: $color-black;
 
@@ -22,10 +20,8 @@
         }
 
         .borderForm {
-            display: flex;
+            @include childCenter;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             border: 1px dashed $color-brown;
             border-radius: 5px;
             width: 90%;

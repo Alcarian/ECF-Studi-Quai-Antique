@@ -1,9 +1,7 @@
 .timeOpen {
     background: $color-black;
-    display: flex;
+    @include childCenter;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     .timeContainer {
         background: $color-dark;
@@ -16,10 +14,8 @@
         }
         
         .border {
-            display: flex;
+            @include childCenter;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             border: 1px dashed $color-brown;
             border-radius: 5px;
             width: 90%;

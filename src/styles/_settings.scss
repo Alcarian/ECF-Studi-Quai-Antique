@@ -18,6 +18,12 @@ $color-orange: #BC3908;
 $color-brown: #621708;
 $color-white: rgb(243, 226, 221);
 
+@mixin childCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 * {
     margin: 0;
     padding: 0;

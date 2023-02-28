@@ -54,7 +54,7 @@ export default function Diner() {
           <h3>8€</h3>
         </div>
         <div className="diner">
-          <p>Tarte au citron</p>
+          <p>Tarte au citron meringuée</p>
           <h3>8€</h3>
         </div>
         <div className="diner">

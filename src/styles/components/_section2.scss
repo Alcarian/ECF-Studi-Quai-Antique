@@ -3,9 +3,7 @@
 }
 
 .imgStyle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include childCenter;
     background-size: cover;
     border-radius: 5px;
     height: 400px;

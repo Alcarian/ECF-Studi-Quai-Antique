@@ -1,8 +1,6 @@
 .menus {
-    display: flex;
+    @include childCenter;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background: url(../../img/bg2.jpg) center/cover;
 
     h2 {
@@ -30,6 +28,10 @@
     width: 90%;
     margin: 0 auto;
     margin-top: 30px;
+
+    @media screen and (min-width: 1000px){
+        width: 60%;
+    }
     
 
     .bloc-tabs {

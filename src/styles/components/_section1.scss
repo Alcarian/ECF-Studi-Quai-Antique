@@ -3,10 +3,8 @@
     background: $color-white;
     border: 1px dashed $color-brown;
     border-radius: 5px;
-    display: flex;
+    @include childCenter;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 20px auto;
 
     h2 {

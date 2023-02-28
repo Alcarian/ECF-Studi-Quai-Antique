@@ -1,16 +1,12 @@
 .dinerCard {
     background: $color-white;
-    display: flex;
+    @include childCenter;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border-radius: 5px;
 
     .borderDiner {
-        display: flex;
+        @include childCenter;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: 90%;
         border: 1px dashed $color-brown;
         margin: 20px 0;
