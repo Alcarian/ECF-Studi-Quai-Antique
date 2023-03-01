@@ -8,7 +8,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/ECF-Studi-Quai-Antique/" element={<Home />} />
         <Route path="/CardMenu" element={<CardMenu />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
