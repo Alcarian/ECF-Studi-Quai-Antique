@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ECF-Studi-Quai-Antique/static/css/main.91993e02.css",
-    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.3cba9179.js",
+    "main.js": "/ECF-Studi-Quai-Antique/static/js/main.61f52be6.js",
     "static/media/poulet5.jpg": "/ECF-Studi-Quai-Antique/static/media/poulet5.b933155b4010a038f955.jpg",
     "static/media/charcuterie4.jpg": "/ECF-Studi-Quai-Antique/static/media/charcuterie4.b2797cfbd072fce44fa5.jpg",
     "static/media/bg.jpg": "/ECF-Studi-Quai-Antique/static/media/bg.25f30070466f3efec9fc.jpg",
@@ -19,10 +19,10 @@
     "static/media/fruits.jpg": "/ECF-Studi-Quai-Antique/static/media/fruits.6535c59b22adef559bf5.jpg",
     "index.html": "/ECF-Studi-Quai-Antique/index.html",
     "main.91993e02.css.map": "/ECF-Studi-Quai-Antique/static/css/main.91993e02.css.map",
-    "main.3cba9179.js.map": "/ECF-Studi-Quai-Antique/static/js/main.3cba9179.js.map"
+    "main.61f52be6.js.map": "/ECF-Studi-Quai-Antique/static/js/main.61f52be6.js.map"
   },
   "entrypoints": [
     "static/css/main.91993e02.css",
-    "static/js/main.3cba9179.js"
+    "static/js/main.61f52be6.js"
   ]
 }
