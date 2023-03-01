@@ -2,9 +2,14 @@ import React, { useState } from "react";
 
 export default function HamburgerMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
+  let largeur = window.innerWidth;
 
   const handleClick = () => {
-    setMenuOpen(!menuOpen);
+    if (largeur < 1000) {
+      setMenuOpen(!menuOpen);
+    } else {
+      setMenuOpen(menuOpen);
+    }
   };
 
   return (
@@ -35,7 +40,7 @@ export default function HamburgerMenu() {
           <a href="#client">Devenir client ?</a>
         </li>
         <li>
-          <a href="#footer">Social</a>
+          <a href="#footer">Nous suivre</a>
         </li>
       </ul>
     </div>
