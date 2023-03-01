@@ -15,21 +15,21 @@ export default function CardMenu() {
       <h3>19€</h3>
       <div className="déjeuner">
         <h2>Nos Entrées</h2>
-        <div className="entrées">
+        <div className="center">
           <h5>* Salade composée</h5>
           <p>Salade verte, lardons, oeufs, croutons</p>
           <h5>* Croissant de charcuterie</h5>
           <p>Croissant, jambon cru, reblochon</p>
         </div>
         <h2>Nos Plats</h2>
-        <div className="plats">
+        <div className="center">
           <h5>* Pâtes carbonara</h5>
           <p>Pâtes, oeufs, crème, oignons, lardons</p>
           <h5>* Viandes du moment</h5>
           <p>Viande du chef accompagnée de frites</p>
         </div>
         <h2>Nos Désserts</h2>
-        <div className="désserts">
+        <div className="center">
           <h5>* Salade de fruits frais</h5>
           <p>Oranges, pommes, kiwis, raisins et ananas</p>
           <h5>* Mousse au chocolat du Chef</h5>
