@@ -4,10 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function CardMenu() {
   return (
     <div className="cardMenu">
-      <NavLink
-        to="/Home"
-        className={(nav) => (nav.isActive ? "nav-active" : "")}
-      >
+      <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
         <button>Retour à l'accueil</button>
       </NavLink>
       <h1 id="accueil">Menu du jour</h1>
@@ -154,10 +151,7 @@ export default function CardMenu() {
         </div>
       </div>
       <h2>Bon Appetit !</h2>
-      <NavLink
-        to="/Home"
-        className={(nav) => (nav.isActive ? "nav-active" : "")}
-      >
+      <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
         <button>Retour à l'accueil</button>
       </NavLink>
       <div className="top">
