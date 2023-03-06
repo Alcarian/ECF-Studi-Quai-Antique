@@ -1,6 +1,73 @@
 .header {
     height: 100vh;
     background: url(../../img/bg.jpg) center/cover;
+    
+
+    .loginRegister {
+        position: relative;
+        z-index: 11;
+        
+        .btn1, .btn2 {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.548);
+            border: 1px solid $color-yellow; 
+            border-radius: 0 20px 20px 0;
+            margin-top: 10px;
+            padding: 10px 30px;
+            color: $color-white;
+            font-family: $font2;
+            font-size: 1rem;
+            cursor: pointer;
+
+            @media screen and (min-width: 1000px){
+                font-size: 1.2rem;
+            }
+
+            &:hover {
+                color: $color-yellow;
+                transform: scale(1.1);
+            }
+        }
+        
+        .btn1 {
+            top: 75px;
+            left: -130px;
+
+            @media screen and (min-width: 1000px){
+                left: -10px;
+            }
+            
+
+            &:hover {
+                transform: translateX(120px);
+                transition: 1s;
+
+                @media screen and (min-width: 1000px){
+                    transform: translateX(0);
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .btn2 {    
+            top: 130px;
+            left: -150px;
+
+            @media screen and (min-width: 1000px){
+                left: -10px;
+            }
+
+            &:hover {
+                transform: translateX(130px);
+                transition: 1s;
+
+                @media screen and (min-width: 1000px){
+                    transform: translateX(0);
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
 
     nav {
         width: 100%;
@@ -11,14 +78,9 @@
         top: 0;
         background: rgba(0, 0, 0, 0.548);
         margin: 0 auto;
-        z-index: 100;
-
-        // @media screen and (min-width: 1000px){
-        //     justify-content: start;
-        // }
+        z-index: 10;
     }
 }
-
 
 .header-text {
     width: 90%;

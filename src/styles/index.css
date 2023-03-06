@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "font-Allura";
   src: url(../fonts/Allura-Regular.ttf);
@@ -52,9 +53,9 @@ body {
   width: 90%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 0 auto;
 }
 .header-text h1, .header-text h6 {
@@ -93,14 +94,14 @@ h6 {
 
 .hamburger-menu {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   cursor: pointer;
   width: 25px;
   height: 15px;
   position: relative;
-  z-index: 100;
+  z-index: 1;
   transition: transform 0.9s ease;
   margin-right: 5px;
 }
@@ -162,6 +163,16 @@ h6 {
   position: absolute;
   right: 25px;
 }
+@media screen and (min-width: 1000px) {
+  .hamburger-menu.open ul {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.hamburger-menu.open ul .modalVisible {
+  visibility: visible;
+  z-index: 2;
+}
 .hamburger-menu.open li {
   text-align: center;
   padding: 5px;
@@ -177,8 +188,8 @@ h6 {
     opacity: 1;
     visibility: visible;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
   .hamburger-menu ul li {
     margin: 0 20px;
@@ -191,6 +202,16 @@ h6 {
 .hamburger-menu a:hover {
   color: #F6AA1C;
 }
+.hamburger-menu button {
+  color: rgb(243, 226, 221);
+  font-family: "font-roboto", serif;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.hamburger-menu button:hover {
+  color: #F6AA1C;
+}
 
 .section-1 {
   width: 90%;
@@ -198,9 +219,9 @@ h6 {
   border: 1px dashed #621708;
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 20px auto;
 }
 .section-1 h2 {
@@ -241,8 +262,8 @@ h6 {
 
 .imgStyle {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-size: cover;
   border-radius: 5px;
   height: 400px;
@@ -257,9 +278,9 @@ h6 {
 
 .menus {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: url(../../img/bg2.jpg) center/cover;
 }
 .menus h2 {
@@ -286,6 +307,11 @@ h6 {
   width: 90%;
   margin: 0 auto;
   margin-top: 30px;
+}
+@media screen and (min-width: 1000px) {
+  .container {
+    width: 60%;
+  }
 }
 .container .bloc-tabs {
   display: flex;
@@ -346,16 +372,16 @@ h6 {
 .lunchCard {
   background: rgb(243, 226, 221);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border-radius: 5px;
 }
 .lunchCard .borderLunch {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 90%;
   border: 1px dashed #621708;
   margin: 20px 0;
@@ -457,16 +483,16 @@ h6 {
 .dinerCard {
   background: rgb(243, 226, 221);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border-radius: 5px;
 }
 .dinerCard .borderDiner {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 90%;
   border: 1px dashed #621708;
   margin: 20px 0;
@@ -546,16 +572,16 @@ h6 {
 .drinksCard {
   background: rgb(243, 226, 221);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border-radius: 5px;
 }
 .drinksCard .borderDrink {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 90%;
   border: 1px dashed #621708;
   margin: 20px 0;
@@ -675,30 +701,152 @@ h6 {
 
 .cardMenu {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  border: 1px dashed #621708;
+  background: rgb(243, 226, 221);
 }
-.cardMenu p {
+@media screen and (min-width: 1000px) {
+  .cardMenu {
+    width: 50%;
+  }
+}
+.cardMenu h1 {
+  font-family: "font-Allura", sans-serif;
+  color: #BC3908;
+  font-size: 2.7rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
+}
+.cardMenu h4 {
+  color: #21201e;
+  margin: 20px 0;
+  text-align: center;
+}
+.cardMenu h3 {
   color: #F6AA1C;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 2rem;
+}
+.cardMenu .déjeuner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  width: 90%;
+}
+.cardMenu h2 {
+  font-family: "font-Allura", sans-serif;
+  color: #BC3908;
+  border-bottom: 1px solid #F6AA1C;
+  font-size: 2.2rem;
+  font-weight: lighter;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.cardMenu .center {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+}
+@media screen and (min-width: 1000px) {
+  .cardMenu .center {
+    width: 70%;
+  }
+}
+.cardMenu .center h5 {
+  font-family: "font-roboto", serif;
+  color: #BC3908;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+.cardMenu .center p {
+  color: #21201e;
+  margin-left: 20px;
+}
+.cardMenu .entrées, .cardMenu .plats, .cardMenu .désserts {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+@media screen and (min-width: 1000px) {
+  .cardMenu .entrées, .cardMenu .plats, .cardMenu .désserts {
+    width: 70%;
+  }
+}
+.cardMenu .entrées h5, .cardMenu .plats h5, .cardMenu .désserts h5 {
+  font-family: "font-roboto", serif;
+  color: #BC3908;
+  font-weight: lighter;
+  font-size: 1.2rem;
+}
+.cardMenu .entrées p, .cardMenu .plats p, .cardMenu .désserts p {
+  color: #21201e;
+  margin-left: 20px;
+}
+.cardMenu .repas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.cardMenu .repas .diner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardMenu .repas .diner h6 {
+  color: #F6AA1C;
+}
+.cardMenu .hours {
+  width: 90%;
 }
 .cardMenu button {
   cursor: pointer;
   border: 1px solid #F6AA1C;
   border-radius: 10px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   color: #BC3908;
+}
+.cardMenu button:hover {
+  background: rgb(243, 226, 221);
+  transform: scale(1.1);
+  transition: 0.8s;
+}
+.cardMenu .top {
+  position: relative;
+}
+.cardMenu .top i {
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  border: 1px solid #BC3908;
+  border-radius: 50px;
+  color: #BC3908;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .timeOpen {
   background: #21201e;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .timeOpen .timeContainer {
   background: black;
@@ -713,9 +861,9 @@ h6 {
 }
 .timeOpen .timeContainer .border {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border: 1px dashed #621708;
   border-radius: 5px;
   width: 90%;
@@ -784,9 +932,9 @@ h6 {
 }
 .form-infos .form-infos-container .borderForm {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border: 1px dashed #621708;
   border-radius: 5px;
   width: 90%;
@@ -853,16 +1001,16 @@ h6 {
 .footer {
   background: #21201e;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border-top: 1px dashed #621708;
 }
 .footer .footer-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 @media screen and (min-width: 1000px) {
   .footer .footer-container {
@@ -898,9 +1046,9 @@ h6 {
 }
 .footer .social {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin-bottom: 30px;
 }
 @media screen and (min-width: 1000px) {
@@ -926,4 +1074,106 @@ h6 {
   font-family: "font-Allura", sans-serif;
   margin-bottom: 10px;
   color: #621708;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: rgb(243, 226, 221);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.modal-content .close-button {
+  color: #621708;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-content form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+.modal-content form button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #621708;
+  color: #F6AA1C;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.modal-content form button:hover {
+  background-color: #21201e;
+}
+
+.modalRegister {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalRegister-content {
+  background-color: rgb(243, 226, 221);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.modalRegister-content .close-button {
+  color: #621708;
+  margin-bottom: 20px;
+}
+.modalRegister-content h2 {
+  color: #BC3908;
+  font-family: "font-Allura", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.modalRegister-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modalRegister-content form input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+.modalRegister-content form button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #621708;
+  color: #F6AA1C;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.modalRegister-content form button:hover {
+  background-color: #21201e;
 }/*# sourceMappingURL=index.css.map */

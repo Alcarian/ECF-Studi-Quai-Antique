@@ -34,12 +34,6 @@ export default function HamburgerMenu() {
           <a href="#résa">Réservation</a>
         </li>
         <li>
-          <a href="#client">Connexion</a>
-        </li>
-        <li>
-          <a href="#client">Devenir client ?</a>
-        </li>
-        <li>
           <a href="#footer">Nous suivre</a>
         </li>
       </ul>

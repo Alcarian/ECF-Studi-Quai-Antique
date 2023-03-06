@@ -5,12 +5,13 @@
     width: 25px;
     height: 15px;
     position: relative;
-    z-index: 100;
+    z-index: 1;
     transition: transform 0.9s ease;
     margin-right: 5px;
 
     @media screen and (min-width: 1000px){
       width: 80%;
+      flex-direction: row;
     }
   
     .line {
@@ -65,7 +66,7 @@
       ul {
         opacity: 1;
         visibility: visible;
-        transform: translateY(63%);
+        transform: translateY(68%);
         transition: transform 1.2s ease;
         background: rgba(0, 0, 0, 0.548);
         display: flex;
@@ -109,7 +110,7 @@
       &:hover {
         color: $color-yellow;
       }
-    }
+    }    
 }
 
 

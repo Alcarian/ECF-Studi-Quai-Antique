@@ -82,6 +82,11 @@
             @media screen and (min-width: 1000px){
                 font-size: 1.3rem;
             }
+
+            &:hover {
+                transform: scale(1.1);
+                transition: 0.4s;
+            }
         }
     }   
 }
