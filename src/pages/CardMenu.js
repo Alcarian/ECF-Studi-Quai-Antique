@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import TimeOpen from "../components/TimeOpen";
 
 export default function CardMenu() {
+  // window.scrollTo(0, 0);
+
+  const [menuData, setMenuData] = useState([]);
+
+  useEffect(() => {
+    const fetchMenuData = async () => {
+      const response = await fetch("http://localhost:5000/api/menu/");
+      const data = await response.json();
+      setMenuData(data.results);
+      // console.log(response.body);
+    };
+    fetchMenuData();
+  });
+
   return (
     <div className="cardMenu">
       <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
@@ -12,27 +26,27 @@ export default function CardMenu() {
       <h4>1 entrée + 1 plat + 1 déssert</h4>
       <h3>19€</h3>
       <div className="déjeuner">
-        <h2>Nos Entrées</h2>
-        <div className="center">
-          <h5>* Salade composée</h5>
-          <p>Salade verte, lardons, oeufs, croutons</p>
-          <h5>* Croissant de charcuterie</h5>
-          <p>Croissant, jambon cru, reblochon</p>
-        </div>
-        <h2>Nos Plats</h2>
-        <div className="center">
-          <h5>* Pâtes carbonara</h5>
-          <p>Pâtes, oeufs, crème, oignons, lardons</p>
-          <h5>* Viandes du moment</h5>
-          <p>Viande du chef accompagnée de frites</p>
-        </div>
-        <h2>Nos Désserts</h2>
-        <div className="center">
-          <h5>* Salade de fruits frais</h5>
-          <p>Oranges, pommes, kiwis, raisins et ananas</p>
-          <h5>* Mousse au chocolat du Chef</h5>
-          <p>Chocolat, oeuf, beurre, sucre</p>
-        </div>
+        {menuData
+          .filter((menu) => menu.jour_semaine === "Mardi")
+          .map((menu, index) => (
+            <div key={menu.jour_semaine} className="center">
+              <div className="entrées">
+                <h2>Entrée du jour</h2>
+                <h5>{"* " + menu.entree}</h5>
+                <p>{menu.description_entree}</p>
+              </div>
+              <div className="plats">
+                <h2>Plat du jour</h2>
+                <h5>{"* " + menu.plat}</h5>
+                <p>{menu.description_plat}</p>
+              </div>
+              <div className="desserts">
+                <h2>Desserts du jour</h2>
+                <h5>{"* " + menu.dessert}</h5>
+                <p>{menu.description_dessert}</p>
+              </div>
+            </div>
+          ))}
       </div>
       <h1>À la Carte</h1>
       <div className="repas">
@@ -113,7 +127,7 @@ export default function CardMenu() {
           </div>
         </div>
         <h2>Nos Désserts</h2>
-        <div className="désserts">
+        <div className="desserts">
           <div className="diner">
             <div>
               <h5>* Chocolat mi-cuit</h5>

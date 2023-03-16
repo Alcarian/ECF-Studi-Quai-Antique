@@ -14,9 +14,31 @@ export default function ModalRegister(props) {
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passewordInputRef.current.value;
 
+    // Control input not empty
+
+    if (
+      enteredName.trim().length === 0 ||
+      enteredFistrName.trim().length === 0 ||
+      enteredEmail.trim().length === 0 ||
+      enteredPassword.trim().length === 0
+    ) {
+      return;
+    }
+
+    // Control email validity
+
+    const regexEmail = (value) => {
+      /* eslint-disable*/
+      return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value);
+    };
+    if (!regexEmail(enteredEmail)) {
+      return;
+    }
+
     console.log(enteredName, enteredFistrName, enteredEmail, enteredPassword);
 
     //clear inputs
+
     nameInputRef.current.value = "";
     firstNameInputRef.current.value = "";
     emailInputRef.current.value = "";

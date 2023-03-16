@@ -35,45 +35,43 @@
         flex-direction: column;
         margin-bottom: 50px; 
         width: 90%;
-
-        .center {
-            @include childCenter;
-            flex-direction: column;
-            text-align: center;
-            width: 90%; 
-            
-            @media screen and (min-width: 1000px){
-                width: 70%;
-            }
-    
-            h2 {
-                font-family: $font-1;
-                color: $color-orange;
-                border-bottom: 1px solid $color-yellow;
-                font-size: 2.2rem;
-                font-weight: bold;
-                margin-top: 20px;
-                margin-bottom: 30px;
-                text-align: center;
-            }
-    
-            h5 {
-                font-family: $font2;
-                color: $color-orange;
-                font-weight: lighter;
-                font-size: 1.2rem;
-                margin-top: 20px;
-            }
-    
-            p {
-                color: $color-black;
-                margin-left: 20px;
-            }
-    
-        }
     }
 
-    
+    h2 {
+        font-family: $font-1;
+        color: $color-orange;
+        border-bottom: 1px solid $color-yellow;
+        font-size: 2.2rem;
+        font-weight: lighter;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 90%; 
+        
+        @media screen and (min-width: 1000px){
+            width: 70%;
+        }
+
+        h5 {
+            font-family: $font2;
+            color: $color-orange;
+            font-weight: lighter;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        p {
+            color: $color-black;
+            margin-left: 20px;
+        }
+
+    }
 
     .entrées, .plats, .desserts {
         display: flex;
