@@ -262,6 +262,16 @@ h6 {
 .hamburger-menu a:hover {
   color: #F6AA1C;
 }
+.hamburger-menu button {
+  color: rgb(243, 226, 221);
+  font-family: "font-roboto", serif;
+  background: rgba(0, 0, 0, 0.548);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.hamburger-menu button:hover {
+  color: #F6AA1C;
+}
 
 .section-1 {
   width: 90%;
@@ -1284,4 +1294,72 @@ h6 {
 }
 .modalRegister-content form button {
   margin-top: 10px;
+}
+
+.adminPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.adminPage h1, .adminPage h2 {
+  color: #BC3908;
+  font-family: "font-Allura", sans-serif;
+  margin-bottom: 40px;
+}
+.adminPage h1 {
+  font-size: 3rem;
+}
+.adminPage h2 {
+  border-bottom: 1px solid #F6AA1C;
+  font-size: 2rem;
+}
+.adminPage .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.adminPage .center h3 {
+  color: #F6AA1C;
+  border-bottom: 1px solid #BC3908;
+  font-family: "font-roboto", serif;
+  font-weight: lighter;
+}
+.adminPage .center .Day {
+  border: 1px dashed #F6AA1C;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+}
+.adminPage .center label {
+  color: #F6AA1C;
+  padding: 10px;
+}
+.adminPage .center input {
+  padding: 5px;
+  margin: 10px;
+  background: rgb(243, 226, 221);
+}
+.adminPage .center textarea {
+  background: rgb(243, 226, 221);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #F6AA1C;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0;
+  color: #BC3908;
+}
+button:hover {
+  background: rgb(243, 226, 221);
+  transform: scale(1.1);
+  transition: 0.8s;
 }/*# sourceMappingURL=index.css.map */

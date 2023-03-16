@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function HamburgerMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +36,14 @@ export default function HamburgerMenu() {
         </li>
         <li>
           <a href="#footer">Nous suivre</a>
+        </li>
+        <li>
+          <NavLink
+            to="/AdminPage"
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
+            <button>Administrateur</button>
+          </NavLink>
         </li>
       </ul>
     </div>

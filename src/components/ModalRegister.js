@@ -56,7 +56,11 @@ export default function ModalRegister(props) {
           <h2>Devenir client</h2>
           <form onSubmit={submitHandler}>
             <input type="text" placeholder="Nom" ref={nameInputRef} />
-            <input type="text" placeholder="Prénom" ref={firstNameInputRef} />
+            <input
+              type="text"
+              placeholder="Nbr de couverts par défaut"
+              ref={firstNameInputRef}
+            />
             <input type="email" placeholder="Email" ref={emailInputRef} />
             <input
               type="password"

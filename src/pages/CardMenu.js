@@ -28,7 +28,7 @@ export default function CardMenu() {
       <div className="déjeuner">
         {menuData
           .filter((menu) => menu.jour_semaine === "Mardi")
-          .map((menu, index) => (
+          .map((menu) => (
             <div key={menu.jour_semaine} className="center">
               <div className="entrées">
                 <h2>Entrée du jour</h2>

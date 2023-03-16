@@ -105,12 +105,26 @@
 
     a {
       color: $color-white;
-      font-family: $font2; 
+      font-family: $font2;
 
       &:hover {
         color: $color-yellow;
       }
-    }    
+    }
+
+    button {
+      color: $color-white;
+      font-family: $font2;
+      background: rgba(0, 0, 0, 0.548);
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-yellow;
+      }
+    }
+    
+    
 }
 
 

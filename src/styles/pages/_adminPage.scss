@@ -1,0 +1,72 @@
+.adminPage {
+    @include childCenter;
+    flex-direction: column;
+    
+    h1, h2 {
+        color: $color-orange;
+        font-family: $font-1;      
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {      
+        border-bottom: 1px solid $color-yellow;
+        font-size: 2rem;
+    }
+
+    .center {
+        @include childCenter;
+        flex-direction: column;
+   
+        h3 {
+            color: $color-yellow;
+            border-bottom: 1px solid $color-orange;
+            font-family: $font2;
+            font-weight: lighter;
+        }
+
+        .Day {
+            border: 1px dashed $color-yellow;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        label {
+            color: $color-yellow;
+            padding: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 10px;
+            background: $color-white;
+        }
+        textarea {
+            background: $color-white;
+        }
+    }  
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid $color-yellow;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0;
+    color: $color-orange;
+
+    &:hover {
+        background: $color-white;
+        transform: scale(1.1);
+        transition: 0.8s;
+    }
+}
