@@ -1,16 +1,26 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import ErrorModal from "./ErrorModal";
 
 export default function ModalRegister(props) {
   const nameInputRef = useRef();
-  const firstNameInputRef = useRef();
+  const nbrCouvertInputRef = useRef();
   const emailInputRef = useRef();
   const passewordInputRef = useRef();
+
+  const [datas, setDatas] = useState();
+  const [error, setError] = useState(null);
+
+  if (error) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
 
   const submitHandler = (event) => {
     event.preventDefault();
 
     const enteredName = nameInputRef.current.value;
-    const enteredFistrName = firstNameInputRef.current.value;
+    const enteredNbrCouvert = nbrCouvertInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passewordInputRef.current.value;
 
@@ -18,10 +28,14 @@ export default function ModalRegister(props) {
 
     if (
       enteredName.trim().length === 0 ||
-      enteredFistrName.trim().length === 0 ||
+      enteredNbrCouvert.trim().length === 0 ||
       enteredEmail.trim().length === 0 ||
       enteredPassword.trim().length === 0
     ) {
+      setError({
+        title: "Un ou plusieurs champs sont vide",
+        message: "Merci de remplir tous les champs",
+      });
       return;
     }
 
@@ -32,22 +46,81 @@ export default function ModalRegister(props) {
       return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value);
     };
     if (!regexEmail(enteredEmail)) {
+      setError({
+        title: "Email invalide",
+        message: " Entrer un format d'email valide",
+      });
       return;
     }
 
-    console.log(enteredName, enteredFistrName, enteredEmail, enteredPassword);
+    // Se connecter et récupérer userId et token authentification
+    const url = "http://localhost:5000/api/authentification/signup";
+
+    const fetchHandler = async () => {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify({
+            nom: enteredName,
+            nbrCouvert: enteredNbrCouvert,
+            email: enteredEmail,
+            password: enteredPassword,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        const dataResponse = await response.json();
+        if (response.ok) {
+          setDatas(dataResponse);
+        } else {
+          setError({
+            title: "Echec Authentification",
+            message: dataResponse.error,
+          });
+
+          throw new Error(dataResponse.error);
+        }
+
+        if (dataResponse && dataResponse.error) {
+          setError({
+            title: "il y a un problème",
+            message: "Compte Email déja existant",
+          });
+        }
+      } catch (error) {
+        console.log("Problème serveur");
+        console.log(error);
+      }
+    };
+    fetchHandler();
 
     //clear inputs
 
-    nameInputRef.current.value = "";
-    firstNameInputRef.current.value = "";
-    emailInputRef.current.value = "";
-    passewordInputRef.current.value = "";
+    // nameInputRef.current.value = "";
+    // firstNameInputRef.current.value = "";
+    // emailInputRef.current.value = "";
+    // passewordInputRef.current.value = "";
   };
+
+  // clear state error
+  const errorHandler = () => {
+    setError(null);
+  };
+
+  console.log(datas);
 
   return (
     <div>
       <div className="modalRegister">
+        {error && (
+          <ErrorModal
+            title={error.title}
+            message={error.message}
+            onConfirm={errorHandler}
+          />
+        )}
         <div className="modalRegister-content">
           <button onClick={props.onClose} className="close-button">
             X
@@ -58,8 +131,8 @@ export default function ModalRegister(props) {
             <input type="text" placeholder="Nom" ref={nameInputRef} />
             <input
               type="text"
-              placeholder="Nbr de couverts par défaut"
-              ref={firstNameInputRef}
+              placeholder="Nbr de couvert entre 1 et 10"
+              ref={nbrCouvertInputRef}
             />
             <input type="email" placeholder="Email" ref={emailInputRef} />
             <input

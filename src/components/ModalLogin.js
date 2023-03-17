@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import ErrorModal from "./ErrorModal";
 
 export default function ModalLogin(props) {
   const emailInputRef = useRef(null);
@@ -25,6 +26,10 @@ export default function ModalLogin(props) {
       enteredEmail.trim().length === 0 ||
       enteredPassword.trim().length === 0
     ) {
+      setError({
+        title: "Un ou plusieurs champs sont vide",
+        message: "Entré votre Email et/ou votre mot de passe",
+      });
       return;
     }
 
@@ -59,37 +64,61 @@ export default function ModalLogin(props) {
         });
 
         const dataResponse = await response.json();
-        setDatas(dataResponse);
+        if (response.ok) {
+          setDatas(dataResponse);
+        } else {
+          setError({
+            title: "Echec Authentification",
+            message: dataResponse.error,
+          });
+
+          throw new Error(dataResponse.error);
+        }
       } catch (error) {
+        console.log("Problème serveur");
         console.log(error);
       }
     };
     fetchHandler();
 
     //clear inputs
-    emailInputRef.current.value = "";
-    passwordInputRef.current.value = "";
+    // emailInputRef.current.value = "";
+    // passwordInputRef.current.value = "";
+  };
+
+  // clear state error
+  const errorHandler = () => {
+    setError(null);
   };
 
   console.log(datas);
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <button className="close-button" onClick={props.onClose}>
-          X
-        </button>
-        <form onSubmit={submitHandler}>
-          <input type="email" ref={emailInputRef} placeholder="Email" />
-          <input
-            type="password"
-            placeholder="Password"
-            ref={passwordInputRef}
+    <div>
+      <div className="modal">
+        {error && (
+          <ErrorModal
+            title={error.title}
+            message={error.message}
+            onConfirm={errorHandler}
           />
-          <button type="submit" onClick={() => {}}>
-            Connexion
+        )}
+        <div className="modal-content">
+          <button className="close-button" onClick={props.onClose}>
+            X
           </button>
-        </form>
+          <form onSubmit={submitHandler}>
+            <input type="email" ref={emailInputRef} placeholder="Email" />
+            <input
+              type="password"
+              placeholder="Password"
+              ref={passwordInputRef}
+            />
+            <button type="submit" onClick={() => {}}>
+              Connexion
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

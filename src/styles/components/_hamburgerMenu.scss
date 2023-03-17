@@ -118,6 +118,7 @@
       background: rgba(0, 0, 0, 0.548);
       font-size: 1rem;
       cursor: pointer;
+      visibility: hidden;
 
       &:hover {
         color: $color-yellow;

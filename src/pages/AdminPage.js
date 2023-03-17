@@ -64,6 +64,8 @@ export default function AdminPage() {
     fetchHandler();
   };
 
+  console.log(datas);
+
   useEffect(() => {
     const fetchMenuData = async () => {
       const response = await fetch("http://localhost:5000/api/menu/");
