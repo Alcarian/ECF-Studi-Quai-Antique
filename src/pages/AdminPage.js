@@ -10,7 +10,8 @@ export default function AdminPage() {
   const descriPlatInputRef = useRef();
   const descriDessertInputRef = useRef();
   const [menuData, setMenuData] = useState([]);
-  const [datas, setDatas] = useState();
+
+  // const [datas, setDatas] = useState();
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -36,35 +37,58 @@ export default function AdminPage() {
     }
 
     // Se connecter et récupérer userId et token authentification
-    const url = "http://localhost:5000/api/admin/updateMenu";
+    // const url = "http://localhost:5000/api/admin/updateMenu";
 
-    const fetchHandler = async () => {
-      try {
-        const response = await fetch(url, {
-          method: "PUT",
-          body: JSON.stringify({
-            entree: enteredEntree,
-            plat: enteredPlat,
-            dessert: enteredDessert,
-            descriptionEntree: enteredDesEntree,
-            descriptionPlat: enteredDesPlat,
-            descriptionDessert: enteredDesDessert,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+    const raw = JSON.stringify({
+      entree: { entreeInputRef },
+      plat: { platInputRef },
+      dessert: { dessertInputRef },
+      descriptionEntree: { descriEntreeInputRef },
+      descriptionPlat: { descriPlatInputRef },
+      descriptionDessert: { descriDessertInputRef },
+      jour_semaine: menuData.jour_semaine,
+    });
+    console.log("==> RAW <==");
+    console.log(raw);
 
-        const dataResponse = await response.json();
-        setDatas(dataResponse);
-      } catch (error) {
-        console.log(error);
-      }
+    const requestOptions = {
+      method: "PUT",
+      body: raw,
+      redirect: "follow",
     };
-    fetchHandler();
-  };
+    console.log("==> requestOptions");
+    console.log(requestOptions);
 
-  console.log(datas);
+    fetch("http://localhost:5000/api/admin/updateMenu", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+
+    //   const fetchHandler = async () => {
+    //     try {
+    //       const response = await fetch(url, {
+    //         method: "PUT",
+    //         body: JSON.stringify({
+    //           entree: enteredEntree,
+    //           plat: enteredPlat,
+    //           dessert: enteredDessert,
+    //           descriptionEntree: enteredDesEntree,
+    //           descriptionPlat: enteredDesPlat,
+    //           descriptionDessert: enteredDesDessert,
+    //         }),
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //       });
+
+    //       const dataResponse = await response.json();
+    //       setDatas(dataResponse);
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //     fetchHandler();
+    //   };
+  };
 
   useEffect(() => {
     const fetchMenuData = async () => {

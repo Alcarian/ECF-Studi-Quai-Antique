@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Brouillon from "./Brouillon";
+import AuthContext from "../Store/AuthContext";
 
 export default function HamburgerMenu() {
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
   const [menuOpen, setMenuOpen] = useState(false);
   let largeur = window.innerWidth;
 
@@ -38,11 +42,16 @@ export default function HamburgerMenu() {
           <a href="#footer">Nous suivre</a>
         </li>
         <li>
+          <Brouillon />
+        </li>
+        <li>
           <NavLink
             to="/AdminPage"
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >
-            <button>Administrateur</button>
+            {isLoggedIn && (
+              <button className="buttonAdmin">Administrateur</button>
+            )}
           </NavLink>
         </li>
       </ul>

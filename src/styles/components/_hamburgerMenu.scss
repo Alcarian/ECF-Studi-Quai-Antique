@@ -112,13 +112,13 @@
       }
     }
 
-    button {
+    .buttonAdmin {
       color: $color-white;
       font-family: $font2;
       background: rgba(0, 0, 0, 0.548);
       font-size: 1rem;
       cursor: pointer;
-      visibility: hidden;
+      // visibility: hidden;
 
       &:hover {
         color: $color-yellow;

@@ -1,9 +1,15 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
+import AuthContext from "../Store/AuthContext";
 import ErrorModal from "./ErrorModal";
 
 export default function ModalLogin(props) {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
+
+  // Utilisation du context
+  const authCtx = useContext(AuthContext);
+  console.log("==> AUTHCONTEXT");
+  console.log(authCtx.userId);
 
   const [datas, setDatas] = useState();
   const [error, setError] = useState(null);
@@ -66,6 +72,7 @@ export default function ModalLogin(props) {
         const dataResponse = await response.json();
         if (response.ok) {
           setDatas(dataResponse);
+          authCtx.login(dataResponse.token, dataResponse.userId);
         } else {
           setError({
             title: "Echec Authentification",
