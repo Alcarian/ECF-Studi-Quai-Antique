@@ -4,12 +4,14 @@ import ModalLogin from "./ModalLogin";
 import ModalRegister from "./ModalRegister";
 import Logo from "./Logo";
 import AuthContext from "../Store/AuthContext";
+import UserAccount from "./UserAccount";
 
 const Header = () => {
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
   const [showModal, setShowModal] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
+  const [showUserAccount, setShowUserAccount] = useState(false);
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -25,6 +27,14 @@ const Header = () => {
 
   const handleCloseModalRegister = () => {
     setShowModalRegister(false);
+  };
+
+  const handleShowUser = () => {
+    setShowUserAccount(true);
+  };
+
+  const handleCloseUser = () => {
+    setShowUserAccount(false);
   };
 
   return (
@@ -47,6 +57,14 @@ const Header = () => {
           {showModalRegister && (
             <ModalRegister onClose={handleCloseModalRegister} />
           )}
+        </li>
+        <li>
+          {isLoggedIn && (
+            <button className="btn3" onClick={handleShowUser}>
+              Compte client
+            </button>
+          )}
+          {showUserAccount && <UserAccount onClose={handleCloseUser} />}
         </li>
       </div>
       <nav>

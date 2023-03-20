@@ -8,6 +8,7 @@ export default function ModalLogin(props) {
 
   // Utilisation du context
   const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
   console.log("==> AUTHCONTEXT");
   console.log(authCtx.userId);
 
@@ -111,6 +112,7 @@ export default function ModalLogin(props) {
           />
         )}
         <div className="modal-content">
+          {isLoggedIn && <p>Vous êtes connecté ! </p>}
           <button className="close-button" onClick={props.onClose}>
             X
           </button>

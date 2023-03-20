@@ -1,14 +1,8 @@
 .brouillon {
-    position: fixed;
-    top: 8vh;
-    right: 10px;
 
-    p {
-        color: $color-yellow;
+    button {
+        color: $color-orange;
     }
 }
 
 
-button {
-    color: $color-orange;
-}

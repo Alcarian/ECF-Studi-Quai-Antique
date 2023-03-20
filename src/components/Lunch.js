@@ -8,11 +8,11 @@ import mousse from "../img/moussechoc.jpg";
 import { NavLink } from "react-router-dom";
 
 export default function Lunch() {
-  const menu = "http://localhost:5000/api/menu/";
+  // const menu = "http://localhost:5000/api/menu/";
 
-  fetch(menu)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+  // fetch(menu)
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data));
 
   return (
     <div className="lunchCard">
