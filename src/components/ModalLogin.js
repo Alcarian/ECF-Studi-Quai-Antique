@@ -9,8 +9,6 @@ export default function ModalLogin(props) {
   // Utilisation du context
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
-  console.log("==> AUTHCONTEXT");
-  console.log(authCtx.userId);
 
   const [datas, setDatas] = useState();
   const [error, setError] = useState(null);

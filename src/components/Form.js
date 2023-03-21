@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import plate from "../img/ic-plate.png";
 import ModalLogin from "./ModalLogin";
 import ModalRegister from "./ModalRegister";
+import ErrorModal from "./ErrorModal";
 
 export default function Form() {
   // Reservation
@@ -23,8 +24,6 @@ export default function Form() {
   } else {
     console.log("false");
   }
-  console.log("*****error******");
-  console.log(error);
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -57,6 +56,19 @@ export default function Form() {
     const enteredName = nameInputRef.current.value;
     const enteredPhone = phoneInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
+
+    // Control email validity
+    const regexEmail = (value) => {
+      /* eslint-disable*/
+      return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value);
+    };
+    if (!regexEmail(enteredEmail)) {
+      setError({
+        title: "Email invalide",
+        message: " Entrer un format d'email valide",
+      });
+      return;
+    }
 
     // mettre a jour le state
     setDataUpdate({
@@ -109,20 +121,45 @@ export default function Form() {
 
     fetch("http://localhost:5000/api/booking/", requestOptions)
       .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
+      .then((result) =>
+        setError(
+          {
+            title: "Réservation enregistré !",
+            message: "Votre réservationa à bien été validé !",
+          },
+          result
+        )
+      )
+      .catch((error) =>
+        setError({ tittle: "Une erreur est survenue", message: error })
+      );
+
+    // Clear input
+    personInputRef.current.value = "";
+    dateInputRef.current.value = "";
+    timeInputRef.current.value = "";
+    nameInputRef.current.value = "";
+    phoneInputRef.current.value = "";
+    emailInputRef.current.value = "";
   }
 
-  // // Clear input
-  // personInputRef.current.value = "";
-  // dateInputRef.current.value = "";
-  // timeInputRef.current.value = "";
-  // nameInputRef.current.value = "";
-  // phoneInputRef.current.value = "";
-  // emailInputRef.current.value = "";
+  // clear state error
+  const errorHandler = () => {
+    setError(null);
+  };
+
+  // date du jour
+  const today = new Date().toLocaleDateString();
 
   return (
     <div className="form-infos" id="résa">
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        />
+      )}
       <div className="form-infos-container">
         <div className="borderForm">
           <h2>Réservation</h2>
@@ -168,7 +205,7 @@ export default function Form() {
               ref={dateInputRef}
               id="booking-date"
               name="booking-date"
-              defaultValue="2023-02-24"
+              defaultValue={today}
               min="2023-02-24"
               max="2024-12-31"
             />
@@ -181,7 +218,13 @@ export default function Form() {
               max="23:00"
             />
             <input type="text" placeholder="Name" ref={nameInputRef} />
-            <input type="text" placeholder="Phone" ref={phoneInputRef} />
+            <input
+              type="tel"
+              pattern="[0-9]{10}"
+              maxLength={10}
+              placeholder="Phone"
+              ref={phoneInputRef}
+            />
             <input type="email" placeholder="Email" ref={emailInputRef} />
 
             <button
