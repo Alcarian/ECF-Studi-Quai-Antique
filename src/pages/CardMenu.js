@@ -175,7 +175,6 @@ export default function CardMenu() {
         </div>
       </div>
       <h2>Bon Appetit !</h2>
-
       <div className="hours">
         <TimeOpen />
       </div>

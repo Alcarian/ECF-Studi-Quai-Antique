@@ -11,6 +11,7 @@ export default function Form() {
   const nameInputRef = useRef();
   const phoneInputRef = useRef();
   const emailInputRef = useRef();
+  const [dataUpdate, setDataUpdate] = useState();
 
   // modal
   const [showModal, setShowModal] = useState(false);
@@ -22,6 +23,8 @@ export default function Form() {
   } else {
     console.log("false");
   }
+  console.log("*****error******");
+  console.log(error);
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -44,47 +47,63 @@ export default function Form() {
   const submitHandler = (event) => {
     event.preventDefault();
   };
-  // const enteredPerson = personInputRef.current.value;
-  // const enteredDate = dateInputRef.current.value;
-  // const enteredTime = timeInputRef.current.value;
-  // const enteredName = nameInputRef.current.value;
-  // const enteredPhone = phoneInputRef.current.value;
-  // const enteredEmail = emailInputRef.current.value;
-
-  // if (
-  //   enteredEmail.trim().length === 0 ||
-  //   enteredPerson.trim().length === 0 ||
-  //   enteredDate.trim().length === 0 ||
-  //   enteredTime.trim().lenght === 0 ||
-  //   enteredName.trim().length === 0 ||
-  //   enteredPhone.trim().length === 0
-  // ) {
-  //   setError({
-  //     title: "Un ou plusieurs champs sont vide",
-  //     message: "Entré votre Email et/ou votre mot de passe",
-  //   });
-  //   return;
-  // }
 
   // Requête POST
 
   function makeBooking() {
+    const enteredPerson = personInputRef.current.value;
+    const enteredDate = dateInputRef.current.value;
+    const enteredTime = timeInputRef.current.value;
+    const enteredName = nameInputRef.current.value;
+    const enteredPhone = phoneInputRef.current.value;
+    const enteredEmail = emailInputRef.current.value;
+
+    // mettre a jour le state
+    setDataUpdate({
+      ...dataUpdate,
+      NbrPersonnes: enteredPerson,
+      date: enteredDate,
+      heures: enteredTime,
+      nom: enteredName,
+      Num_téléphone: enteredPhone,
+      email: enteredEmail,
+    });
+
+    // Création objet
+    const dataUpdateSend = {
+      NbrPersonnes: enteredPerson,
+      date: enteredDate,
+      heures: enteredTime,
+      nom: enteredName,
+      Num_téléphone: enteredPhone,
+      email: enteredEmail,
+    };
+
+    if (
+      enteredEmail.trim().length === 0 ||
+      enteredPerson.trim().length === 0 ||
+      enteredDate.trim().length === 0 ||
+      enteredTime.trim().lenght === 0 ||
+      enteredName.trim().length === 0 ||
+      enteredPhone.trim().length === 0
+    ) {
+      setError({
+        title: "Un ou plusieurs champs sont vide",
+      });
+      return;
+    }
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    // const raw = JSON.stringify({
-    //   NbrPersonnes: { enteredPerson },
-    //   date: { enteredDate },
-    //   heures: { enteredTime },
-    //   nom: { enteredName },
-    //   Num_téléphone: { enteredPhone },
-    //   email: { enteredEmail },
-    // });
+    const data = dataUpdateSend;
+    console.log("*****DATA******");
+    console.log(data);
 
     const requestOptions = {
       method: "POST",
       headers: myHeaders,
-      // body: raw,
+      body: JSON.stringify(data),
       redirect: "follow",
     };
 
@@ -94,8 +113,7 @@ export default function Form() {
       .catch((error) => console.log("error", error));
   }
 
-  // Clear input
-
+  // // Clear input
   // personInputRef.current.value = "";
   // dateInputRef.current.value = "";
   // timeInputRef.current.value = "";
