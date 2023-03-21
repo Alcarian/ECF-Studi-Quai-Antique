@@ -89,9 +89,9 @@ export default function ModalLogin(props) {
     };
     fetchHandler();
 
-    //clear inputs
-    // emailInputRef.current.value = "";
-    // passwordInputRef.current.value = "";
+    // clear inputs
+    emailInputRef.current.value = "";
+    passwordInputRef.current.value = "";
   };
 
   // clear state error
@@ -123,9 +123,11 @@ export default function ModalLogin(props) {
               placeholder="Password"
               ref={passwordInputRef}
             />
-            <button type="submit" onClick={() => {}}>
-              Connexion
-            </button>
+            {!isLoggedIn && (
+              <button type="submit" onClick={() => {}}>
+                Connexion
+              </button>
+            )}
           </form>
         </div>
       </div>

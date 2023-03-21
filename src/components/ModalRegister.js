@@ -16,6 +16,9 @@ export default function ModalRegister(props) {
     console.log("false");
   }
 
+  console.log("****error****");
+  console.log(error);
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -98,10 +101,10 @@ export default function ModalRegister(props) {
 
     //clear inputs
 
-    // nameInputRef.current.value = "";
-    // firstNameInputRef.current.value = "";
-    // emailInputRef.current.value = "";
-    // passewordInputRef.current.value = "";
+    nameInputRef.current.value = "";
+    nbrCouvertInputRef.current.value = "";
+    emailInputRef.current.value = "";
+    passewordInputRef.current.value = "";
   };
 
   // clear state error

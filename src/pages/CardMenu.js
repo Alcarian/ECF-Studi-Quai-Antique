@@ -7,15 +7,24 @@ export default function CardMenu() {
 
   const [menuData, setMenuData] = useState([]);
 
-  useEffect(() => {
-    const fetchMenuData = async () => {
-      const response = await fetch("http://localhost:5000/api/menu/");
-      const data = await response.json();
-      setMenuData(data.results);
-      // console.log(response.body);
+  function getInfosData() {
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
     };
-    fetchMenuData();
-  });
+
+    return fetch("http://localhost:5000/api/menu/", requestOptions)
+      .then((response) => response.json())
+      .then((result) => setMenuData(result.results))
+      .catch((error) => {
+        console.log("error requète", error);
+        throw error;
+      });
+  }
+
+  useEffect(() => {
+    getInfosData();
+  }, []);
 
   return (
     <div className="cardMenu">

@@ -18,6 +18,10 @@ export default function HamburgerMenu() {
     }
   };
 
+  // if (isLoggedIn == true) {
+  //   setAdminId([]);
+  // }
+
   return (
     <div
       className={`hamburger-menu ${menuOpen ? "open" : ""}`}

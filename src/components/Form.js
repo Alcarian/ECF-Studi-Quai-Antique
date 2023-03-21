@@ -15,6 +15,13 @@ export default function Form() {
   // modal
   const [showModal, setShowModal] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
+  const [error, setError] = useState(null);
+
+  if (error) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -36,31 +43,65 @@ export default function Form() {
 
   const submitHandler = (event) => {
     event.preventDefault();
-
-    const enteredPerson = personInputRef.current.value;
-    const enteredDate = dateInputRef.current.value;
-    const enteredTime = timeInputRef.current.value;
-    const enteredName = nameInputRef.current.value;
-    const enteredPhone = phoneInputRef.current.value;
-    const enteredEmail = emailInputRef.current.value;
-
-    console.log(
-      enteredPerson,
-      enteredDate,
-      enteredTime,
-      enteredName,
-      enteredPhone,
-      enteredEmail
-    );
-    // Clear input
-
-    personInputRef.current.value = "";
-    dateInputRef.current.value = "";
-    timeInputRef.current.value = "";
-    nameInputRef.current.value = "";
-    phoneInputRef.current.value = "";
-    emailInputRef.current.value = "";
   };
+  const enteredPerson = personInputRef.current.value;
+  const enteredDate = dateInputRef.current.value;
+  const enteredTime = timeInputRef.current.value;
+  const enteredName = nameInputRef.current.value;
+  const enteredPhone = phoneInputRef.current.value;
+  const enteredEmail = emailInputRef.current.value;
+
+  if (
+    enteredEmail.trim().length === 0 ||
+    enteredPerson.trim().length === 0 ||
+    enteredDate.trim().length === 0 ||
+    enteredTime.trim().lenght === 0 ||
+    enteredName.trim().length === 0 ||
+    enteredPhone.trim().length === 0
+  ) {
+    setError({
+      title: "Un ou plusieurs champs sont vide",
+      message: "Entré votre Email et/ou votre mot de passe",
+    });
+    return;
+  }
+
+  // Requête POST
+
+  function makeBooking() {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      NbrPersonnes: { enteredPerson },
+      date: { enteredDate },
+      heures: { enteredTime },
+      nom: { enteredName },
+      Num_téléphone: { enteredPhone },
+      email: { enteredEmail },
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:5000/api/booking/", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  }
+
+  // Clear input
+
+  personInputRef.current.value = "";
+  dateInputRef.current.value = "";
+  timeInputRef.current.value = "";
+  nameInputRef.current.value = "";
+  phoneInputRef.current.value = "";
+  emailInputRef.current.value = "";
 
   return (
     <div className="form-infos" id="résa">
@@ -101,8 +142,8 @@ export default function Form() {
               <option value="6">6</option>
               <option value="7">7</option>
               <option value="8">8</option>
-              <option value="9">8</option>
-              <option value="10">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
             </select>
             <input
               type="date"
@@ -125,7 +166,11 @@ export default function Form() {
             <input type="text" placeholder="Phone" ref={phoneInputRef} />
             <input type="email" placeholder="Email" ref={emailInputRef} />
 
-            <button type="submit" onClick={() => {}} className="btnReservation">
+            <button
+              type="submit"
+              onClick={() => makeBooking()}
+              className="btnReservation"
+            >
               Réserver
             </button>
           </form>

@@ -56,7 +56,7 @@ export default function AdminPage() {
   };
 
   const handleFinishEditing = (menuJour) => {
-    setMenuSemaine((menuSemaine) =>
+    setRows((menuSemaine) =>
       menuSemaine.map((menu) => {
         if (menu.jour === menuJour) {
           return { ...menu, isEditing: false };

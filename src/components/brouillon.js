@@ -176,3 +176,42 @@ export default function UserAccount(props) {
     </div>
   );
 }
+
+
+//******************************************************************* */
+
+
+
+  const raw = JSON.stringify({
+    entree: { entreeInputRef },
+    plat: { platInputRef },
+    dessert: { dessertInputRef },
+    descriptionEntree: { descriEntreeInputRef },
+    descriptionPlat: { descriPlatInputRef },
+    descriptionDessert: { descriDessertInputRef },
+    jour_semaine: menuData.jour_semaine,
+  });
+
+
+   // Control input not empty
+
+   const enteredEntree = entreeInputRef.current;
+   const enteredPlat = platInputRef.current;
+   const enteredDessert = dessertInputRef.current;
+   const enteredDesEntree = descriEntreeInputRef.current;
+   const enteredDesPlat = descriPlatInputRef.current;
+   const enteredDesDessert = descriDessertInputRef.current;
+ 
+   console.log("******enteredEntree******");
+   console.log(entreeInputRef);
+ 
+   if (
+     enteredEntree.trim().length === 0 ||
+     enteredPlat.trim().length === 0 ||
+     enteredDessert.trim().length === 0 ||
+     enteredDesEntree.trim().length === 0 ||
+     enteredDesPlat.trim().length === 0 ||
+     enteredDesDessert.trim().length === 0
+   ) {
+     return;
+   }

@@ -3,6 +3,7 @@ import AuthContext from "../Store/AuthContext";
 
 export default function UserAccount(props) {
   const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
   const nameInputRef = useRef();
   const nbrCouvertInputRef = useRef();
   const [infosData, setInfosData] = useState([]);
@@ -21,6 +22,8 @@ export default function UserAccount(props) {
   // surveiller les modifications des champs
   const [nom, setNom] = useState();
   const [couvert, setCouvert] = useState();
+
+  // Requête GET
 
   function getInfosData() {
     const requestOptions = {
@@ -47,6 +50,8 @@ export default function UserAccount(props) {
     getInfosData();
   }, [modification]);
 
+  // Requête PUT
+
   const updateData = (nom, nbrCouvert) => {
     fetch(`http://localhost:5000/api/users/userUpdate?id=${authCtx.userId}`, {
       method: "PUT",
@@ -58,9 +63,30 @@ export default function UserAccount(props) {
       }),
     })
       .then((response) => response.text())
-      .then((result) => console.log(result + "le resultat"))
+      .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
   };
+
+  // Requête DELETE
+  function deleteUser() {
+    const requestOptions = {
+      method: "DELETE",
+      headers: new Headers({
+        Authorization: `Bearer ${authCtx.token}`,
+      }),
+      redirect: "follow",
+    };
+
+    fetch(
+      `http://localhost:5000/api/users/deleteUser?id=${authCtx.userId}`,
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  }
+
+  useEffect(() => {}, [modification]);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -107,6 +133,17 @@ export default function UserAccount(props) {
               >
                 {!modification ? "Modifier" : "Envoyer"}
               </button>
+              {isLoggedIn && (
+                <button
+                  onClick={() => {
+                    modificationHandler();
+                    deleteUser();
+                    // authCtx.logout();
+                  }}
+                >
+                  Supprimer compte
+                </button>
+              )}
             </form>
           </div>
         ))}
