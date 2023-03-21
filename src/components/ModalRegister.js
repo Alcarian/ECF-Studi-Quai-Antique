@@ -77,6 +77,7 @@ export default function ModalRegister(props) {
         const dataResponse = await response.json();
         if (response.ok) {
           setDatas(dataResponse);
+          alert("Enregistrement créé !!");
         } else {
           setError({
             title: "Echec Authentification",
