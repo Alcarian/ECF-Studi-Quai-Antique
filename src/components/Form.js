@@ -44,27 +44,27 @@ export default function Form() {
   const submitHandler = (event) => {
     event.preventDefault();
   };
-  const enteredPerson = personInputRef.current.value;
-  const enteredDate = dateInputRef.current.value;
-  const enteredTime = timeInputRef.current.value;
-  const enteredName = nameInputRef.current.value;
-  const enteredPhone = phoneInputRef.current.value;
-  const enteredEmail = emailInputRef.current.value;
+  // const enteredPerson = personInputRef.current.value;
+  // const enteredDate = dateInputRef.current.value;
+  // const enteredTime = timeInputRef.current.value;
+  // const enteredName = nameInputRef.current.value;
+  // const enteredPhone = phoneInputRef.current.value;
+  // const enteredEmail = emailInputRef.current.value;
 
-  if (
-    enteredEmail.trim().length === 0 ||
-    enteredPerson.trim().length === 0 ||
-    enteredDate.trim().length === 0 ||
-    enteredTime.trim().lenght === 0 ||
-    enteredName.trim().length === 0 ||
-    enteredPhone.trim().length === 0
-  ) {
-    setError({
-      title: "Un ou plusieurs champs sont vide",
-      message: "Entré votre Email et/ou votre mot de passe",
-    });
-    return;
-  }
+  // if (
+  //   enteredEmail.trim().length === 0 ||
+  //   enteredPerson.trim().length === 0 ||
+  //   enteredDate.trim().length === 0 ||
+  //   enteredTime.trim().lenght === 0 ||
+  //   enteredName.trim().length === 0 ||
+  //   enteredPhone.trim().length === 0
+  // ) {
+  //   setError({
+  //     title: "Un ou plusieurs champs sont vide",
+  //     message: "Entré votre Email et/ou votre mot de passe",
+  //   });
+  //   return;
+  // }
 
   // Requête POST
 
@@ -72,19 +72,19 @@ export default function Form() {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    const raw = JSON.stringify({
-      NbrPersonnes: { enteredPerson },
-      date: { enteredDate },
-      heures: { enteredTime },
-      nom: { enteredName },
-      Num_téléphone: { enteredPhone },
-      email: { enteredEmail },
-    });
+    // const raw = JSON.stringify({
+    //   NbrPersonnes: { enteredPerson },
+    //   date: { enteredDate },
+    //   heures: { enteredTime },
+    //   nom: { enteredName },
+    //   Num_téléphone: { enteredPhone },
+    //   email: { enteredEmail },
+    // });
 
     const requestOptions = {
       method: "POST",
       headers: myHeaders,
-      body: raw,
+      // body: raw,
       redirect: "follow",
     };
 
@@ -96,12 +96,12 @@ export default function Form() {
 
   // Clear input
 
-  personInputRef.current.value = "";
-  dateInputRef.current.value = "";
-  timeInputRef.current.value = "";
-  nameInputRef.current.value = "";
-  phoneInputRef.current.value = "";
-  emailInputRef.current.value = "";
+  // personInputRef.current.value = "";
+  // dateInputRef.current.value = "";
+  // timeInputRef.current.value = "";
+  // nameInputRef.current.value = "";
+  // phoneInputRef.current.value = "";
+  // emailInputRef.current.value = "";
 
   return (
     <div className="form-infos" id="résa">
