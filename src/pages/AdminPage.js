@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function AdminPage() {
+export default function AdminPage(menu) {
   const entreeInputRef = useRef();
   const platInputRef = useRef();
   const dessertInputRef = useRef();
@@ -11,67 +11,16 @@ export default function AdminPage() {
   const [menuData, setMenuData] = useState([]);
   const [modification, setModification] = useState(false);
 
-  const [menuSemaine, setMenuSemaine] = useState([
-    {
-      jour: "Mardi",
-      entree: "",
-      plat: "",
-      dessert: "",
-      descriptionEntree: "",
-      descriptionPlat: "",
-      descriptionDessert: "",
-      isEditing: false,
-    },
-  ]);
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-
-    console.log(menuSemaine);
-  };
-
-  const handleChange = (event, menuJour) => {
-    const { name, value } = event.target;
-    setMenuSemaine((menuSemaine) =>
-      menuSemaine.map((menu) => {
-        if (menu.jour === menuJour) {
-          return { ...menu, [name]: value };
-        } else {
-          return menu;
-        }
-      })
-    );
-  };
-
-  const handleEdit = (menuJour) => {
-    setMenuSemaine((menuSemaine) =>
-      menuSemaine.map((menu) => {
-        if (menu.jour === menuJour) {
-          return { ...menu, isEditing: true };
-        } else {
-          return { ...menu, isEditing: false };
-        }
-      })
-    );
-  };
-
-  const handleFinishEditing = (menuJour) => {
-    setMenuSemaine((menuSemaine) =>
-      menuSemaine.map((menu) => {
-        if (menu.jour === menuJour) {
-          return { ...menu, isEditing: false };
-        } else {
-          return menu;
-        }
-      })
-    );
-  };
+  // console.log("*********menuData******");
+  // console.log(menuData[2]);
 
   // Modif données
   const modificationHandler = () => {
     setModification((modification) => !modification);
-    console.log("**************modif*******");
-    console.log(modification);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
   };
 
   // surveiller les modifications des champs
@@ -81,10 +30,25 @@ export default function AdminPage() {
   const [descriptionEntree, setDescriptionEntree] = useState();
   const [descriptionPlat, setDescriptionPlat] = useState();
   const [descriptionDessert, setDescriptionDessert] = useState();
-  const [jour_semaine, setJour_semaine] = useState();
 
-  console.log("****entree*********");
-  console.log(entree);
+  // Vérifier si les champs ont été modifiés et ont une valeur
+  const updateEntree =
+    entree !== menu.entree && entree !== "" ? entree : menu.entree;
+  const updatePlat = plat !== menu.plat && plat !== "" ? plat : menu.plat;
+  const updateDessert =
+    dessert !== menu.dessert && dessert !== "" ? dessert : menu.dessert;
+  const updateDescriptionEntree =
+    descriptionEntree !== menu.description_entree && descriptionEntree !== ""
+      ? descriptionEntree
+      : menu.description_entree;
+  const updateDescriptionPlat =
+    descriptionPlat !== menu.description_plat && descriptionPlat !== ""
+      ? descriptionPlat
+      : menu.description_plat;
+  const updateDescriptionDessert =
+    descriptionDessert !== menu.description_dessert && descriptionDessert !== ""
+      ? descriptionDessert
+      : menu.description_dessert;
 
   // Requête GET
   function getMenuData() {
@@ -134,87 +98,120 @@ export default function AdminPage() {
       .catch((error) => console.log("error", error));
   };
 
+  useEffect(() => {}, [modification]);
+
   return (
     <div className="adminPage">
       <h1>Espace Admin</h1>
       <h2>Menu de la semaine</h2>
 
       <div className="center">
-        {<h3>Mardi</h3>}
+        <h3>Mardi</h3>
         {menuData
           .filter((menu) => menu.jour_semaine === "Mardi")
           .map((menu) => (
             <div key={menu.jour_semaine} className="Day">
-              <form>
+              <form onSubmit={submitHandler}>
                 <label>Entrée :</label>
                 {!modification && <p>{menu.entree}</p>}
                 {modification && (
                   <input
                     type="text"
-                    ref={entreeInputRef}
-                    Value={menu.entree}
+                    value={menu.entree}
                     onChange={(e) => setEntree(e.target.value)}
+                    ref={entreeInputRef}
                   />
                 )}
+
                 <label>Plat :</label>
-                <input
-                  type="text"
-                  ref={platInputRef}
-                  defaultValue={menu.plat}
-                  onChange={(e) => setPlat(e.target.value)}
-                />
+                {!modification && <p>{menu.plat}</p>}
+                {modification && (
+                  <input
+                    type="text"
+                    value={menu.plat}
+                    onChange={(e) => setPlat(e.target.value)}
+                    ref={platInputRef}
+                  />
+                )}
 
                 <label>Dessert :</label>
-                <input
-                  type="text"
-                  ref={dessertInputRef}
-                  defaultValue={menu.dessert}
-                  onChange={(e) => setDessert(e.target.value)}
-                />
+                {!modification && <p>{menu.dessert}</p>}
+                {modification && (
+                  <input
+                    type="text"
+                    value={menu.dessert}
+                    onChange={(e) => setDessert(e.target.value)}
+                    ref={dessertInputRef}
+                  />
+                )}
               </form>
+
               <form onSubmit={submitHandler}>
                 <label>Description entrée :</label>
-                <textarea
-                  type="text"
-                  ref={descriEntreeInputRef}
-                  defaultValue={menu.description_entree}
-                  onChange={(e) => setDescriptionEntree(e.target.value)}
-                />
+                {!modification && <p>{menu.description_entree}</p>}
+                {modification && (
+                  <textarea
+                    type="text"
+                    value={menu.description_entree}
+                    onChange={(e) => setDescriptionEntree(e.target.value)}
+                    ref={descriEntreeInputRef}
+                  />
+                )}
 
                 <label>Descritpion plat :</label>
-                <textarea
-                  type="text"
-                  ref={descriPlatInputRef}
-                  defaultValue={menu.description_plat}
-                  onChange={(e) => setDescriptionPlat(e.target.value)}
-                />
+                {!modification && <p>{menu.description_plat}</p>}
+                {modification && (
+                  <textarea
+                    type="text"
+                    value={menu.description_plat}
+                    onChange={(e) => setDescriptionPlat(e.target.value)}
+                    ref={descriPlatInputRef}
+                  />
+                )}
 
                 <label>Description dessert :</label>
-                <textarea
-                  type="text"
-                  ref={descriDessertInputRef}
-                  defaultValue={menu.description_dessert}
-                  onChange={(e) => setDescriptionDessert(e.target.value)}
-                />
+                {!modification && <p>{menu.description_dessert}</p>}
+                {modification && (
+                  <textarea
+                    type="text"
+                    value={menu.description_dessert}
+                    onChange={(e) => setDescriptionDessert(e.target.value)}
+                    ref={descriDessertInputRef}
+                  />
+                )}
 
                 <div className="buttons">
-                  <button
-                    type="submit"
-                    onClick={() => {
-                      modificationHandler();
-                      updateMenuData(
-                        entree,
-                        plat,
-                        dessert,
-                        descriptionEntree,
-                        descriptionPlat,
-                        descriptionDessert,
-                        jour_semaine
-                      );
-                    }}
-                  >
-                    {!modification ? "Modifier" : "Enregistrer modification"}
-                  </button>
+                  {!modification && (
+                    <button
+                      onSubmit={submitHandler}
+                      onClick={() => {
+                        modificationHandler();
+                        getMenuData();
+                      }}
+                    >
+                      Modifier
+                    </button>
+                  )}
+                  {modification && (
+                    <button
+                      type="submit"
+                      onClick={() => {
+                        modificationHandler();
+                        updateMenuData(
+                          updateEntree,
+                          updatePlat,
+                          updateDessert,
+                          updateDescriptionEntree,
+                          updateDescriptionPlat,
+                          updateDescriptionDessert,
+                          "Mardi"
+                        );
+                        getMenuData();
+                      }}
+                    >
+                      Enregistrer modifications
+                    </button>
+                  )}
                 </div>
               </form>
             </div>
@@ -224,54 +221,83 @@ export default function AdminPage() {
           .filter((menu) => menu.jour_semaine === "Mercredi")
           .map((menu) => (
             <div key={menu.jour_semaine} className="Day">
-              <form>
+              <form onSubmit={submitHandler}>
                 <label>Entrée :</label>
-                <input
-                  type="text"
-                  ref={entreeInputRef}
-                  defaultValue={menu.entree}
-                />
-
+                {!modification && <p>{menu.entree}</p>}
+                {modification && (
+                  <input
+                    type="text"
+                    defaultValue={menu.entree}
+                    onChange={(e) => setEntree(e.target.value)}
+                    ref={entreeInputRef}
+                  />
+                )}
                 <label>Plat :</label>
                 <input
                   type="text"
-                  ref={platInputRef}
                   defaultValue={menu.plat}
+                  ref={platInputRef}
                 />
 
                 <label>Dessert :</label>
                 <input
                   type="text"
-                  ref={dessertInputRef}
                   defaultValue={menu.dessert}
+                  ref={dessertInputRef}
                 />
               </form>
               <form onSubmit={submitHandler}>
                 <label>Description entrée</label>
                 <textarea
                   type="text"
-                  ref={descriEntreeInputRef}
                   defaultValue={menu.description_entree}
+                  ref={descriEntreeInputRef}
                 />
 
                 <label>Descritpion plat :</label>
                 <textarea
                   type="text"
-                  ref={descriPlatInputRef}
                   defaultValue={menu.description_plat}
+                  ref={descriPlatInputRef}
                 />
 
                 <label>Description dessert :</label>
                 <textarea
                   type="text"
-                  ref={descriDessertInputRef}
                   defaultValue={menu.description_dessert}
+                  ref={descriDessertInputRef}
                 />
 
                 <div className="buttons">
-                  <button type="submit" onClick={() => {}}>
-                    Enregistrer les modifications
-                  </button>
+                  {!modification && (
+                    <button
+                      onSubmit={submitHandler}
+                      onClick={() => {
+                        modificationHandler();
+                      }}
+                    >
+                      Modifier
+                    </button>
+                  )}
+                  {modification && (
+                    <button
+                      type="submit"
+                      onClick={() => {
+                        modificationHandler();
+                        updateMenuData(
+                          updateEntree,
+                          updatePlat,
+                          updateDessert,
+                          updateDescriptionEntree,
+                          updateDescriptionPlat,
+                          updateDescriptionDessert,
+                          "Mercredi"
+                        );
+                      }}
+                    >
+                      Enregistrer modifications
+                    </button>
+                  )}
                 </div>
               </form>
             </div>
@@ -281,48 +307,48 @@ export default function AdminPage() {
           .filter((menu) => menu.jour_semaine === "Jeudi")
           .map((menu) => (
             <div key={menu.jour_semaine} className="Day">
-              <form>
+              <form onSubmit={submitHandler}>
                 <label>Entrée :</label>
                 <input
                   type="text"
-                  ref={entreeInputRef}
                   defaultValue={menu.entree}
+                  ref={entreeInputRef}
                 />
 
                 <label>Plat :</label>
                 <input
                   type="text"
-                  ref={platInputRef}
                   defaultValue={menu.plat}
+                  ref={platInputRef}
                 />
 
                 <label>Dessert :</label>
                 <input
                   type="text"
-                  ref={dessertInputRef}
                   defaultValue={menu.dessert}
+                  ref={dessertInputRef}
                 />
               </form>
               <form onSubmit={submitHandler}>
                 <label>Description entrée :</label>
                 <textarea
                   type="text"
-                  ref={descriEntreeInputRef}
                   defaultValue={menu.description_entree}
+                  ref={descriEntreeInputRef}
                 />
 
                 <label>Descritpion plat :</label>
                 <textarea
                   type="text"
-                  ref={descriPlatInputRef}
                   defaultValue={menu.description_plat}
+                  ref={descriPlatInputRef}
                 />
 
                 <label>Description dessert :</label>
                 <textarea
                   type="text"
-                  ref={descriDessertInputRef}
                   defaultValue={menu.description_dessert}
+                  ref={descriDessertInputRef}
                 />
 
                 <div className="buttons">
@@ -338,48 +364,48 @@ export default function AdminPage() {
           .filter((menu) => menu.jour_semaine === "Vendredi")
           .map((menu) => (
             <div key={menu.jour_semaine} className="Day">
-              <form>
+              <form onSubmit={submitHandler}>
                 <label>Entrée :</label>
                 <input
                   type="text"
-                  ref={entreeInputRef}
                   defaultValue={menu.entree}
+                  ref={entreeInputRef}
                 />
 
                 <label>Plat :</label>
                 <input
                   type="text"
-                  ref={platInputRef}
                   defaultValue={menu.plat}
+                  ref={platInputRef}
                 />
 
                 <label>Dessert :</label>
                 <input
                   type="text"
-                  ref={dessertInputRef}
                   defaultValue={menu.dessert}
+                  ref={dessertInputRef}
                 />
               </form>
               <form onSubmit={submitHandler}>
                 <label>Description entrée :</label>
                 <textarea
                   type="text"
-                  ref={descriEntreeInputRef}
                   defaultValue={menu.description_entree}
+                  ref={descriEntreeInputRef}
                 />
 
                 <label>Descritpion plat :</label>
                 <textarea
                   type="text"
-                  ref={descriPlatInputRef}
                   defaultValue={menu.description_plat}
+                  ref={descriPlatInputRef}
                 />
 
                 <label>Description dessert :</label>
                 <textarea
                   type="text"
-                  ref={descriDessertInputRef}
                   defaultValue={menu.description_dessert}
+                  ref={descriDessertInputRef}
                 />
 
                 <div className="buttons">
@@ -395,48 +421,48 @@ export default function AdminPage() {
           .filter((menu) => menu.jour_semaine === "Samedi")
           .map((menu) => (
             <div key={menu.jour_semaine} className="Day">
-              <form>
+              <form onSubmit={submitHandler}>
                 <label>Entrée :</label>
                 <input
                   type="text"
-                  ref={entreeInputRef}
                   defaultValue={menu.entree}
+                  ref={entreeInputRef}
                 />
 
                 <label>Plat :</label>
                 <input
                   type="text"
-                  ref={platInputRef}
                   defaultValue={menu.plat}
+                  ref={platInputRef}
                 />
 
                 <label>Dessert :</label>
                 <input
                   type="text"
-                  ref={dessertInputRef}
                   defaultValue={menu.dessert}
+                  ref={dessertInputRef}
                 />
               </form>
               <form onSubmit={submitHandler}>
                 <label>Description entrée :</label>
                 <textarea
                   type="text"
-                  ref={descriEntreeInputRef}
                   defaultValue={menu.description_entree}
+                  ref={descriEntreeInputRef}
                 />
 
                 <label>Descritpion plat :</label>
                 <textarea
                   type="text"
-                  ref={descriPlatInputRef}
                   defaultValue={menu.description_plat}
+                  ref={descriPlatInputRef}
                 />
 
                 <label>Description dessert :</label>
                 <textarea
                   type="text"
-                  ref={descriDessertInputRef}
                   defaultValue={menu.description_dessert}
+                  ref={descriDessertInputRef}
                 />
 
                 <div className="buttons">
@@ -452,48 +478,48 @@ export default function AdminPage() {
           .filter((menu) => menu.jour_semaine === "Dimanche")
           .map((menu) => (
             <div key={menu.jour_semaine} className="Day">
-              <form>
+              <form onSubmit={submitHandler}>
                 <label>Entrée :</label>
                 <input
                   type="text"
-                  ref={entreeInputRef}
                   defaultValue={menu.entree}
+                  ref={entreeInputRef}
                 />
 
                 <label>Plat :</label>
                 <input
                   type="text"
-                  ref={platInputRef}
                   defaultValue={menu.plat}
+                  ref={platInputRef}
                 />
 
                 <label>Dessert :</label>
                 <input
                   type="text"
-                  ref={dessertInputRef}
                   defaultValue={menu.dessert}
+                  ref={dessertInputRef}
                 />
               </form>
               <form onSubmit={submitHandler}>
                 <label>Description entrée :</label>
                 <textarea
                   type="text"
-                  ref={descriEntreeInputRef}
                   defaultValue={menu.description_entree}
+                  ref={descriEntreeInputRef}
                 />
 
                 <label>Descritpion plat :</label>
                 <textarea
                   type="text"
-                  ref={descriPlatInputRef}
                   defaultValue={menu.description_plat}
+                  ref={descriPlatInputRef}
                 />
 
                 <label>Description dessert :</label>
                 <textarea
                   type="text"
-                  ref={descriDessertInputRef}
                   defaultValue={menu.description_dessert}
+                  ref={descriDessertInputRef}
                 />
                 <div className="buttons">
                   <button type="submit" onClick={() => {}}>

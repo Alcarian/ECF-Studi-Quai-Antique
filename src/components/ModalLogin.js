@@ -88,8 +88,8 @@ export default function ModalLogin(props) {
     fetchHandler();
 
     // clear inputs
-    emailInputRef.current.value = "";
-    passwordInputRef.current.value = "";
+    // emailInputRef.current.value = "";
+    // passwordInputRef.current.value = "";
   };
 
   // clear state error

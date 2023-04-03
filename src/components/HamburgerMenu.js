@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../Store/AuthContext";
 import Logout from "./Logout";
 
 export default function HamburgerMenu() {
   const authCtx = useContext(AuthContext);
-  const isLoggedIn = authCtx.isLoggedIn;
   const [menuOpen, setMenuOpen] = useState(false);
   const largeur = window.innerWidth;
-  const [adminId, setAdminId] = useState(53);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const adminId = 53;
 
   const handleClick = () => {
     if (largeur < 1000) {
@@ -18,9 +18,11 @@ export default function HamburgerMenu() {
     }
   };
 
-  // if (isLoggedIn == true) {
-  //   setAdminId([]);
-  // }
+  useEffect(() => {
+    if (authCtx.userId === adminId) {
+      setIsAdmin(true);
+    }
+  }, [authCtx.userId]);
 
   return (
     <div
@@ -54,10 +56,10 @@ export default function HamburgerMenu() {
             to="/AdminPage"
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >
-            {isLoggedIn && adminId === authCtx.userId ? (
+            {isAdmin ? (
               <button className="buttonAdmin">Administrateur</button>
             ) : (
-              <p></p>
+              false
             )}
           </NavLink>
         </li>

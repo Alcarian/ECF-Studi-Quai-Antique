@@ -124,15 +124,29 @@ export default function UserAccount(props) {
                   onChange={(e) => setCouvert(e.target.value)}
                 />
               )}
-              <button
-                type="submit"
-                onClick={() => {
-                  modificationHandler();
-                  updateData(nom, couvert);
-                }}
-              >
-                {!modification ? "Modifier" : "Envoyer"}
-              </button>
+              {!modification && (
+                <button
+                  onSubmit={submitHandler}
+                  onClick={() => {
+                    modificationHandler();
+                    getInfosData();
+                  }}
+                >
+                  Modifier
+                </button>
+              )}
+              {modification && (
+                <button
+                  type="submit"
+                  onClick={() => {
+                    modificationHandler();
+                    updateData(nom, couvert);
+                  }}
+                >
+                  Envoyer
+                </button>
+              )}
+
               {isLoggedIn && (
                 <button
                   onClick={() => {
