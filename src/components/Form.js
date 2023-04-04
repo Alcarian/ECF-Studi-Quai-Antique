@@ -14,9 +14,6 @@ export default function Form() {
   const emailInputRef = useRef();
   const [dataUpdate, setDataUpdate] = useState();
 
-  const dotenv = require("dotenv");
-  const result = dotenv.config();
-
   // modal
   const [showModal, setShowModal] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);

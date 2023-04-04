@@ -5,9 +5,6 @@ import TimeOpen from "../components/TimeOpen";
 export default function CardMenu() {
   // window.scrollTo(0, 0);
 
-  const dotenv = require("dotenv");
-  const result = dotenv.config();
-
   const [menuData, setMenuData] = useState([]);
 
   function getInfosData() {
