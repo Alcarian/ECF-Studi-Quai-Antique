@@ -11,6 +11,9 @@ export default function AdminPage(menu) {
   const [menuData, setMenuData] = useState([]);
   const [modification, setModification] = useState(false);
 
+  const dotenv = require("dotenv");
+  dotenv.config();
+
   // console.log("*********menuData******");
   // console.log(menuData[2]);
 
@@ -57,7 +60,7 @@ export default function AdminPage(menu) {
       redirect: "follow",
     };
 
-    return fetch("http://localhost:5000/api/menu/", requestOptions)
+    return fetch(`${process.env.REACT_APP_API_URL}/api/menu/`, requestOptions)
       .then((response) => response.json())
       .then((result) => setMenuData(result.results))
       .catch((error) => {
@@ -80,7 +83,7 @@ export default function AdminPage(menu) {
     descriptionDessert,
     jour_semaine
   ) => {
-    fetch("http://localhost:5000/api/admin/updateMenu", {
+    fetch(`${process.env.REACT_APP_API_URL}/api/admin/updateMenu`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

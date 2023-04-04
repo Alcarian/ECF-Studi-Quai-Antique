@@ -14,6 +14,9 @@ export default function Form() {
   const emailInputRef = useRef();
   const [dataUpdate, setDataUpdate] = useState();
 
+  const dotenv = require("dotenv");
+  dotenv.config();
+
   // modal
   const [showModal, setShowModal] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
@@ -119,7 +122,7 @@ export default function Form() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/api/booking/", requestOptions)
+    fetch(`${process.env.REACT_APP_API_URL}/api/booking/`, requestOptions)
       .then((response) => response.text())
       .then((result) =>
         setError(

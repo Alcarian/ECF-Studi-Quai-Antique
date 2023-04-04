@@ -5,6 +5,9 @@ import TimeOpen from "../components/TimeOpen";
 export default function CardMenu() {
   // window.scrollTo(0, 0);
 
+  const dotenv = require("dotenv");
+  dotenv.config();
+
   const [menuData, setMenuData] = useState([]);
 
   function getInfosData() {
@@ -13,7 +16,7 @@ export default function CardMenu() {
       redirect: "follow",
     };
 
-    return fetch("http://localhost:5000/api/menu/", requestOptions)
+    return fetch(`${process.env.REACT_APP_API_URL}/api/menu/`, requestOptions)
       .then((response) => response.json())
       .then((result) => setMenuData(result.results))
       .catch((error) => {

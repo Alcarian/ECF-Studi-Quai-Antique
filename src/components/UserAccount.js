@@ -9,6 +9,9 @@ export default function UserAccount(props) {
   const [infosData, setInfosData] = useState([]);
   const [modification, setModification] = useState(false);
 
+  const dotenv = require("dotenv");
+  dotenv.config();
+
   console.log("****infosdata****");
   console.log(infosData);
 
@@ -35,7 +38,7 @@ export default function UserAccount(props) {
     };
 
     return fetch(
-      `http://localhost:5000/api/users/infos?id=${authCtx.userId}`,
+      `${process.env.REACT_APP_API_URL}/api/users/infos?id=${authCtx.userId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -53,15 +56,18 @@ export default function UserAccount(props) {
   // Requête PUT
 
   const updateData = (nom, nbrCouvert) => {
-    fetch(`http://localhost:5000/api/users/userUpdate?id=${authCtx.userId}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        id: authCtx.userId,
-        Nom: nom,
-        nbrCouvert: nbrCouvert,
-      }),
-    })
+    fetch(
+      `${process.env.REACT_APP_API_URL}/api/users/userUpdate?id=${authCtx.userId}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: authCtx.userId,
+          Nom: nom,
+          nbrCouvert: nbrCouvert,
+        }),
+      }
+    )
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
@@ -78,7 +84,7 @@ export default function UserAccount(props) {
     };
 
     fetch(
-      `http://localhost:5000/api/users/deleteUser?id=${authCtx.userId}`,
+      `${process.env.REACT_APP_API_URL}/api/users/deleteUser?id=${authCtx.userId}`,
       requestOptions
     )
       .then((response) => response.text())

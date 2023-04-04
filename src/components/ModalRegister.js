@@ -7,6 +7,9 @@ export default function ModalRegister(props) {
   const emailInputRef = useRef();
   const passewordInputRef = useRef();
 
+  const dotenv = require("dotenv");
+  dotenv.config();
+
   const [datas, setDatas] = useState();
   const [error, setError] = useState(null);
 
@@ -57,7 +60,7 @@ export default function ModalRegister(props) {
     }
 
     // Se connecter et récupérer userId et token authentification
-    const url = "http://localhost:5000/api/authentification/signup";
+    const url = `${process.env.REACT_APP_API_URL}/api/authentification/signup`;
 
     const fetchHandler = async () => {
       try {

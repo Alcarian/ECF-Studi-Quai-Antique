@@ -53,7 +53,7 @@ export default function ModalLogin(props) {
     }
 
     // Se connecter et récupérer userId et token authentification
-    const url = "http://localhost:5000/api/authentification/login";
+    const url = `${process.env.REACT_APP_API_URL}/api/authentification/login`;
 
     const fetchHandler = async () => {
       try {
