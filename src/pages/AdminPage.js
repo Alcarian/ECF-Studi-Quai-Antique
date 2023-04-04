@@ -12,7 +12,7 @@ export default function AdminPage(menu) {
   const [modification, setModification] = useState(false);
 
   const dotenv = require("dotenv");
-  dotenv.config();
+  const result = dotenv.config();
 
   // console.log("*********menuData******");
   // console.log(menuData[2]);

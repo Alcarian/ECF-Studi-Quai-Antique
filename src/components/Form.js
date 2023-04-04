@@ -15,7 +15,7 @@ export default function Form() {
   const [dataUpdate, setDataUpdate] = useState();
 
   const dotenv = require("dotenv");
-  dotenv.config();
+  const result = dotenv.config();
 
   // modal
   const [showModal, setShowModal] = useState(false);

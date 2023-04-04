@@ -6,6 +6,9 @@ export default function ModalLogin(props) {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
 
+  const dotenv = require("dotenv");
+  const result = dotenv.config();
+
   // Utilisation du context
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;

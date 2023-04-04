@@ -6,7 +6,7 @@ export default function CardMenu() {
   // window.scrollTo(0, 0);
 
   const dotenv = require("dotenv");
-  dotenv.config();
+  const result = dotenv.config();
 
   const [menuData, setMenuData] = useState([]);
 

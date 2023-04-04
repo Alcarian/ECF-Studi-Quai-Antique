@@ -10,7 +10,7 @@ export default function UserAccount(props) {
   const [modification, setModification] = useState(false);
 
   const dotenv = require("dotenv");
-  dotenv.config();
+  const result = dotenv.config();
 
   console.log("****infosdata****");
   console.log(infosData);

@@ -8,7 +8,7 @@ export default function ModalRegister(props) {
   const passewordInputRef = useRef();
 
   const dotenv = require("dotenv");
-  dotenv.config();
+  const result = dotenv.config();
 
   const [datas, setDatas] = useState();
   const [error, setError] = useState(null);
