@@ -30,8 +30,8 @@ export default function UserAccount(props) {
       method: "GET",
       headers: new Headers({
         Authorization: `Bearer ${authCtx.token}`,
+        redirect: "follow",
       }),
-      redirect: "follow",
     };
 
     return fetch(
