@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../Store/AuthContext";
+import ConfirmSupp from "./Confirmsupp";
 
 export default function UserAccount(props) {
   const authCtx = useContext(AuthContext);
@@ -72,26 +73,26 @@ export default function UserAccount(props) {
   };
 
   // Requête DELETE
-  function deleteUser() {
-    const requestOptions = {
-      method: "DELETE",
-      headers: new Headers({
-        Authorization: `Bearer ${authCtx.token}`,
-        "Content-Type": "application/json, Authorization",
-      }),
-      redirect: "follow",
-    };
+  // function deleteUser() {
+  //   const requestOptions = {
+  //     method: "DELETE",
+  //     headers: new Headers({
+  //       Authorization: `Bearer ${authCtx.token}`,
+  //       "Content-Type": "application/json, Authorization",
+  //     }),
+  //     redirect: "follow",
+  //   };
 
-    fetch(
-      `${process.env.REACT_APP_API_URL}/api/users/deleteUser?id=${authCtx.userId}`,
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
-  }
+  //   fetch(
+  //     `${process.env.REACT_APP_API_URL}/api/users/deleteUser?id=${authCtx.userId}`,
+  //     requestOptions
+  //   )
+  //     .then((response) => response.text())
+  //     .then((result) => console.log(result))
+  //     .catch((error) => console.log("error", error));
+  // }
 
-  useEffect(() => {}, [modification]);
+  // useEffect(() => {}, [modification]);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -156,8 +157,7 @@ export default function UserAccount(props) {
                 <button
                   onClick={() => {
                     modificationHandler();
-                    deleteUser();
-                    authCtx.logout;
+                    <ConfirmSupp />;
                   }}
                 >
                   Supprimer compte
