@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../Store/AuthContext";
 
-export default function Confirmsupp(props) {
+export default function ConfirmSupp(props) {
   const authCtx = useContext(AuthContext);
   const [modification, setModification] = useState(false);
 

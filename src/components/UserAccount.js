@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../Store/AuthContext";
-import Confirmsupp from "./Confirmsupp";
+import ConfirmSupp from "./ConfirmSupp";
 
 export default function UserAccount(props) {
   const authCtx = useContext(AuthContext);
@@ -165,7 +165,7 @@ export default function UserAccount(props) {
                 {isLoggedIn && (
                   <button onClick={handleShowConfirm}>Supprimer compte</button>
                 )}
-                {showConfirm && <Confirmsupp onClose={handleCloseConfirm} />}
+                {showConfirm && <ConfirmSupp onClose={handleCloseConfirm} />}
               </div>
             </form>
           </div>
