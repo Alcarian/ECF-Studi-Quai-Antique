@@ -38,20 +38,23 @@ export default function ConfirmSupp(props) {
 
   return (
     <div className="modal">
-      <button className="close-button" onClick={props.onClose}>
-        X
-      </button>
-      <p>Voulez-vous supprimer votre compte ?</p>
-      <button
-        onSubmit={submitHandler}
-        onClick={() => {
-          modificationHandler();
-          deleteUser();
-          authCtx.logout();
-        }}
-      >
-        Supprimer
-      </button>
+      <div className="modal-content">
+        <button className="close-button" onClick={props.onClose}>
+          X
+        </button>
+        <p>Voulez-vous vraiment supprimer votre compte ?</p>
+        <button
+          onSubmit={submitHandler}
+          onClick={() => {
+            modificationHandler();
+            deleteUser();
+          }}
+        >
+          <a href="#accueil" onClick={authCtx.logout}>
+            Supprimer
+          </a>
+        </button>
+      </div>
     </div>
   );
 }

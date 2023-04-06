@@ -9,6 +9,15 @@ export default function UserAccount(props) {
   const nbrCouvertInputRef = useRef();
   const [infosData, setInfosData] = useState([]);
   const [modification, setModification] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handleShowConfirm = () => {
+    setShowConfirm(true);
+  };
+
+  const handleCloseConfirm = () => {
+    setShowConfirm(false);
+  };
 
   console.log("****infosdata****");
   console.log(infosData);
@@ -152,17 +161,12 @@ export default function UserAccount(props) {
                   Envoyer
                 </button>
               )}
-
-              {isLoggedIn && (
-                <button
-                  onClick={() => {
-                    modificationHandler();
-                    <ConfirmSupp />;
-                  }}
-                >
-                  Supprimer compte
-                </button>
-              )}
+              <div>
+                {isLoggedIn && (
+                  <button onClick={handleShowConfirm}>Supprimer compte</button>
+                )}
+                {showConfirm && <ConfirmSupp onClose={handleCloseConfirm} />}
+              </div>
             </form>
           </div>
         ))}
