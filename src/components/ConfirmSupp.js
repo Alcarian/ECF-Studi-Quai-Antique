@@ -44,6 +44,7 @@ export default function ConfirmSupp(props) {
       <button
         onSubmit={submitHandler}
         onClick={() => {
+          modificationHandler();
           deleteUser();
           authCtx.logout();
         }}
