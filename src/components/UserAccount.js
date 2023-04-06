@@ -157,7 +157,7 @@ export default function UserAccount(props) {
                   onClick={() => {
                     modificationHandler();
                     deleteUser();
-                    // authCtx.logout();
+                    authCtx.logout();
                   }}
                 >
                   Supprimer compte
