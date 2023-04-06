@@ -77,7 +77,7 @@ export default function UserAccount(props) {
       method: "DELETE",
       headers: new Headers({
         Authorization: `Bearer ${authCtx.token}`,
-        "Content-Type": "application/json",
+        "Content-Type": "application/json, Authorization",
       }),
       redirect: "follow",
     };
