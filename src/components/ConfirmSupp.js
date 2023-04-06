@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../Store/AuthContext";
 
 export default function ConfirmSupp(props) {
   const authCtx = useContext(AuthContext);
+  const [modification, setModification] = useState(false);
 
   // Modif données
   const modificationHandler = () => {
