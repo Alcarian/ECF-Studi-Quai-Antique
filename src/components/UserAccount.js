@@ -19,14 +19,12 @@ export default function UserAccount(props) {
     setShowConfirm(false);
   };
 
-  console.log("****infosdata****");
-  console.log(infosData);
+  // console.log("****infosdata****");
+  // console.log(infosData);
 
   // Modif données
   const modificationHandler = () => {
     setModification((modification) => !modification);
-    console.log("**************modif*******");
-    console.log(modification);
   };
 
   // surveiller les modifications des champs
@@ -81,27 +79,7 @@ export default function UserAccount(props) {
       .catch((error) => console.log("error", error));
   };
 
-  // Requête DELETE
-  // function deleteUser() {
-  //   const requestOptions = {
-  //     method: "DELETE",
-  //     headers: new Headers({
-  //       Authorization: `Bearer ${authCtx.token}`,
-  //       "Content-Type": "application/json, Authorization",
-  //     }),
-  //     redirect: "follow",
-  //   };
-
-  //   fetch(
-  //     `${process.env.REACT_APP_API_URL}/api/users/deleteUser?id=${authCtx.userId}`,
-  //     requestOptions
-  //   )
-  //     .then((response) => response.text())
-  //     .then((result) => console.log(result))
-  //     .catch((error) => console.log("error", error));
-  // }
-
-  // useEffect(() => {}, [modification]);
+  useEffect(() => {}, [modification]);
 
   const submitHandler = (event) => {
     event.preventDefault();

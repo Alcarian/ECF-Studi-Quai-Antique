@@ -10,6 +10,10 @@ export default function ConfirmSupp(props) {
     setModification((modification) => !modification);
   };
 
+  const closeModal = () => {
+    props.onClose();
+  };
+
   // Requête DELETE
   function deleteUser() {
     const requestOptions = {
@@ -39,15 +43,14 @@ export default function ConfirmSupp(props) {
   return (
     <div className="modal">
       <div className="modal-content">
-        <button className="close-button" onClick={props.onClose}>
-          X
-        </button>
+        <button onClick={props.onClose}>X</button>
         <p>Voulez-vous vraiment supprimer votre compte ?</p>
         <button
           onSubmit={submitHandler}
           onClick={() => {
             modificationHandler();
             deleteUser();
+            closeModal();
           }}
         >
           <a href="#accueil" onClick={authCtx.logout}>
