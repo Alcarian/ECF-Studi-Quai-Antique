@@ -19,8 +19,8 @@ export default function UserAccount(props) {
     setShowConfirm(false);
   };
 
-  // console.log("****infosdata****");
-  // console.log(infosData);
+  console.log("****infosdata****");
+  console.log(infosData);
 
   // Modif données
   const modificationHandler = () => {
@@ -98,11 +98,11 @@ export default function UserAccount(props) {
             <form onSubmit={submitHandler}>
               <label htmlFor="name">Nom d'utilisateur:</label>
 
-              {!modification && <p>{data.Nom}</p>}
+              {!modification && <p>{data.nom}</p>}
               {modification && (
                 <input
                   type="text"
-                  defaultValue={data.Nom}
+                  defaultValue={data.nom}
                   ref={nameInputRef}
                   onChange={(e) => setNom(e.target.value)}
                 />

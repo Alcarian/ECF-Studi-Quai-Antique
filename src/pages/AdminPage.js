@@ -54,6 +54,7 @@ export default function AdminPage(menu) {
   function getMenuData() {
     const requestOptions = {
       method: "GET",
+      headers: { "Content-Type": "application/json, Authorization" },
       redirect: "follow",
     };
 
