@@ -85,7 +85,7 @@ export default function AdminPage(menu) {
       method: "PUT",
       headers: {
         "Content-Type":
-          "application/json, Authorization ,Access-Control-Allow-Headers",
+          "application/json, Authorization ,Access-Control-Allow-Origin",
       },
       body: JSON.stringify({
         entree: entree,
