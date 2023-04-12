@@ -83,7 +83,10 @@ export default function AdminPage(menu) {
   ) => {
     fetch(`${process.env.REACT_APP_API_URL}/api/admin/updateMenu`, {
       method: "PUT",
-      headers: { "Content-Type": "application/json, Authorization" },
+      headers: {
+        "Content-Type":
+          "application/json, Authorization ,Access-Control-Allow-Headers",
+      },
       body: JSON.stringify({
         entree: entree,
         plat: plat,
