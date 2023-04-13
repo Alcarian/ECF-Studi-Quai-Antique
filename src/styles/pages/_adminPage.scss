@@ -1,79 +1,103 @@
 .adminPage {
     @include childCenter;
     flex-direction: column;
-    
-    h1, h2 {
+
+    h2 {
         color: $color-orange;
-        font-family: $font-1;      
-        margin-bottom: 40px;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-
-    h2 {      
-        border-bottom: 1px solid $color-yellow;
+        font-family: $font-1;
         font-size: 2rem;
+        margin-top: 40px;
+        font-weight: 200;
+        border-bottom: 1px solid $color-yellow;
+
+        @media screen and (min-width: 1000px){
+            font-size: 2.5rem;
+        }
     }
 
-    .center {
-        @include childCenter;
-        flex-direction: column;
-   
-        h3 {
-            color: $color-yellow;
-            border-bottom: 1px solid $color-orange;
-            font-family: $font2;
-            font-weight: lighter;
-        }
-
-        .Day {
-            border: 1px dashed $color-yellow;
-            border-radius: 5px;
-            margin: 20px;
-            padding: 10px;
-        }
-
-        label {
-            color: $color-yellow;
-            padding: 10px;
-        }
-
-        p {
-            color: $color-orange;
-            background: $color-white;
-            padding: 10px 15px;
-            text-align: center;
-        }
-
-        input {
-            padding: 5px;
-            margin: 10px;
-            background: $color-white;
-        }
-        textarea {
-            background: $color-white;
-        }
-    }  
+    span {
+        margin-top: 30px;
+    }
 }
 
-.buttons {
+.container {
     display: flex;
-    justify-content: center;
-}
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
 
-button {
-    cursor: pointer;
-    border: 1px solid $color-yellow;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px 0;
-    color: $color-orange;
-
-    &:hover {
-        background: $color-white;
-        transform: scale(1.1);
-        transition: 0.8s;
+    @media screen and (min-width: 1000px){
+        width: 60%;
     }
+    
+
+    .bloc-tabs {
+        display: flex;
+
+        button {
+            border: none;  
+            color: $color-yellow;
+            font-family: $font-1;
+            font-size: 1.7rem;
+
+            @media screen and (min-width: 1000px){
+                font-size: 2.2rem;
+            }
+        }
+    
+
+        .tabs {
+
+            padding: 15px;
+            text-align: center;
+            width: 50%;
+            background: rgba(0, 0, 0, 0.521);
+            cursor: pointer;
+            position: relative;
+            border-radius: 5px;
+        }
+        
+        .active-tabs {
+            position: relative;
+    
+            &::after {
+                content: "";
+                height: 3px;
+                width: 0;
+                position: absolute;
+                border-radius: 10px;
+                background: $color-orange;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-animation: anim 0.3s  ease forwards;
+                animation: anim 0.6s ease     forwards;
+
+                @-webkit-keyframes anim {
+                  to {
+                    width: 100%;
+                  }
+                }
+                @keyframes anim {
+                  to {
+                    width: 100%;
+                    }
+                }
+            }
+            
+        }
+        
+    }
+               
+    .content-tabs {
+        .content {
+            display: none;
+        }
+          .active-content {
+            display: block;
+        }
+    }
+    
 }
