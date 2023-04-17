@@ -4,4 +4,36 @@
     h2 {
         text-align: center;
     }
+
+    h3 {
+        text-align: center;
+        color: $color-orange;
+        margin-bottom: 20px;
+    }
+
+    form {
+        border: 1px dashed $color-yellow;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+
+        .hours {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+
+        label {
+            color: $color-white;
+            margin: 0 5px;
+        }
+
+        input {
+            text-align: center;
+            width: 100px;
+            padding: 5px;
+            margin: 10px;
+        }
+    }    
 }

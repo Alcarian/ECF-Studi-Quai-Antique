@@ -7,7 +7,9 @@ export default function HamburgerMenu() {
   const authCtx = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const largeur = window.innerWidth;
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(
+    localStorage.getItem("isAdmin") === true || false
+  );
   const adminId = 85;
 
   const handleClick = () => {
@@ -19,10 +21,21 @@ export default function HamburgerMenu() {
   };
 
   useEffect(() => {
-    if (authCtx.userId === adminId) {
+    //eslint-disable-next-line
+    if (authCtx.userId == adminId) {
       setIsAdmin(true);
+      localStorage.setItem("isAdmin", true);
+    } else {
+      setIsAdmin(false);
+      localStorage.setItem("isAdmin", false);
     }
-  }, [authCtx.userId]);
+  }, [authCtx.userId, adminId]);
+
+  console.log("**REACT_APP**");
+  console.log(process.env.REACT_APP_ADMIN_ID);
+
+  console.log("****isAdmin****");
+  console.log(adminId);
 
   return (
     <div
