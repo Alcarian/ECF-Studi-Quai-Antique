@@ -43,8 +43,8 @@ export const AuthContextProvider = (props) => {
 
   // Présence token = connecté et convertir le token en valeur booléenne
   const userIsLoggedIn = !!token;
-  console.log("===>> USERISLOGGEDIN");
-  console.log(userIsLoggedIn);
+  // console.log("===>> USERISLOGGEDIN");
+  // console.log(userIsLoggedIn);
 
   // Le context value
   const contextValue = {

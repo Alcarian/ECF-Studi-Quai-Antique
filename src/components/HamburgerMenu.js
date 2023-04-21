@@ -31,12 +31,6 @@ export default function HamburgerMenu() {
     }
   }, [authCtx.userId, adminId]);
 
-  console.log("**REACT_APP**");
-  console.log(process.env.REACT_APP_ADMIN_ID);
-
-  console.log("****isAdmin****");
-  console.log(adminId);
-
   return (
     <div
       className={`hamburger-menu ${menuOpen ? "open" : ""}`}

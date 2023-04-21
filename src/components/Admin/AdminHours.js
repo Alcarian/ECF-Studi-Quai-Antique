@@ -39,11 +39,8 @@ export default function AdminHours() {
 
   // Requête PUT
   const updateHoursData = (openLunch, closeLunch, openDiner, closeDiner) => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/hours/update`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/hours/updateHours`, {
       method: "PUT",
-      // headers: {
-      //   "Content-Type": "application/json, Authorization",
-      // },
       mode: "cors",
       body: JSON.stringify({
         open_lunch: openLunch,

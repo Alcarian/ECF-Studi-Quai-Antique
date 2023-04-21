@@ -19,11 +19,11 @@ export default function Form() {
   const [showModalRegister, setShowModalRegister] = useState(false);
   const [error, setError] = useState(null);
 
-  if (error) {
-    console.log("true");
-  } else {
-    console.log("false");
-  }
+  // if (error) {
+  //   console.log("true");
+  // } else {
+  //   console.log("false");
+  // }
 
   const handleShowModal = () => {
     setShowModal(true);
