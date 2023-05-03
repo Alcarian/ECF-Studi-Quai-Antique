@@ -10,7 +10,7 @@ export default function HamburgerMenu() {
   const [isAdmin, setIsAdmin] = useState(
     localStorage.getItem("isAdmin") === true || false
   );
-  const adminId = process.env.REACT_APP_ADMIN_ID;
+  const adminId = 85;
 
   console.log("adminId*********");
   console.log(adminId);
