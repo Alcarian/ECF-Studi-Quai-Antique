@@ -12,9 +12,6 @@ export default function HamburgerMenu() {
   );
   const adminId = 85;
 
-  console.log("adminId*********");
-  console.log(adminId);
-
   const handleClick = () => {
     if (largeur < 1000) {
       setMenuOpen(!menuOpen);

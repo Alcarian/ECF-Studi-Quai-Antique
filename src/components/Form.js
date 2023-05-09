@@ -18,12 +18,13 @@ export default function Form() {
   const [showModal, setShowModal] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
   const [error, setError] = useState(null);
+  // const [errorMessage, setErrorMessage] = useState("");
 
-  // if (error) {
-  //   console.log("true");
-  // } else {
-  //   console.log("false");
-  // }
+  if (error) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -105,34 +106,39 @@ export default function Form() {
       return;
     }
 
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
     const data = dataUpdateSend;
     console.log("*****DATA******");
     console.log(data);
 
-    const requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: JSON.stringify(data),
-      redirect: "follow",
-    };
+    const url = `${process.env.REACT_APP_API_URL}/api/booking/`;
 
-    fetch(`${process.env.REACT_APP_API_URL}/api/booking/`, requestOptions)
-      .then((response) => response.text())
-      .then((result) =>
-        setError(
-          {
-            title: "Réservation enregistré !",
-            message: "Votre réservationa à bien été validé !",
+    const fetchHandler = async () => {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          credentials: "include",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
           },
-          result
-        )
-      )
-      .catch((error) =>
-        setError({ tittle: "Une erreur est survenue", message: error })
-      );
+        });
+
+        const dataResponse = await response.json();
+        if (response.ok) {
+          setDataUpdate(dataResponse);
+          alert("Réservation validée ! Merci");
+        } else {
+          setError({
+            title: "Echec réservation",
+            message: dataResponse.error,
+          });
+        }
+      } catch (error) {
+        console.log("Problème serveur");
+        console.log(error);
+      }
+    };
+    fetchHandler();
 
     // Clear input
     personInputRef.current.value = "";
@@ -158,6 +164,7 @@ export default function Form() {
           title={error.title}
           message={error.message}
           onConfirm={errorHandler}
+          onClose={() => setError(null)}
         />
       )}
       <div className="form-infos-container">

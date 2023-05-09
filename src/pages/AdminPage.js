@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import AdminMenu from "../components/Admin/AdminMenu";
 import AdminHours from "../components/Admin/AdminHours";
+import AdminBooking from "../components/Admin/AdminBooking";
 
 export default function AdminPage() {
   const [toggleState, setToggleState] = useState(1);
@@ -27,6 +28,12 @@ export default function AdminPage() {
           >
             Horaires
           </button>
+          <button
+            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+            onClick={() => toggleTab(3)}
+          >
+            Réservations
+          </button>
         </div>
 
         <div className="content-tabs">
@@ -46,6 +53,15 @@ export default function AdminPage() {
           >
             <div>
               <AdminHours />
+            </div>
+          </div>
+          <div
+            className={
+              toggleState === 3 ? "content  active-content" : "content"
+            }
+          >
+            <div>
+              <AdminBooking />
             </div>
           </div>
         </div>

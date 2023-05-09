@@ -30,7 +30,10 @@ export default function ConfirmSupp(props) {
       requestOptions
     )
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        alert("Compte supprimé !");
+      })
       .catch((error) => console.log("error", error));
   }
 
