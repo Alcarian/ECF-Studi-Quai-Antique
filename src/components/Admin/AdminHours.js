@@ -6,9 +6,15 @@ export default function AdminHours() {
   const [closeLunch, setCloseLunch] = useState();
   const [openDiner, setOpenDiner] = useState();
   const [closeDiner, setCloseDiner] = useState();
+  const [modification, setModification] = useState(false);
 
   const submitHandler = (event) => {
     event.preventDefault();
+  };
+
+  // Modif données
+  const modificationHandler = () => {
+    setModification((modification) => !modification);
   };
 
   // Requête GET
@@ -28,14 +34,16 @@ export default function AdminHours() {
       });
   }
 
+  console.log(dataHours);
+
   useEffect(() => {
     getDataHours();
-  }, []);
+  }, [modification]);
 
   // Ajout d'une condition pour afficher un message d'attente
-  if (dataHours.length === 0) {
-    return <div>Chargement des données en cours...</div>;
-  }
+  // if (dataHours && dataHours.length === 0) {
+  //   return <div>Chargement des données en cours...</div>;
+  // }
 
   // Requête PUT
   const updateHoursData = (openLunch, closeLunch, openDiner, closeDiner) => {
@@ -54,95 +62,128 @@ export default function AdminHours() {
       .catch((error) => console.log("error", error));
   };
 
-  // Mettre le contenu du composant en dehors de la fonction pour éviter un map
-  const timeOpenContent = (
-    <div className="timeContainer">
-      <h2>Modifier les horaires</h2>
+  useEffect(() => {}, [modification]);
 
-      <h3>Du mardi au jeudi</h3>
-      <form onSubmit={submitHandler}>
-        <div className="hours">
-          <label>Heure d'ouverture déjeuner</label>
-          <input
-            type="text"
-            defaultValue={dataHours.length > 0 && `${dataHours[0].open_lunch}`}
-            onChange={(e) => setOpenLunch(e.target.value)}
-          />
-        </div>
+  return (
+    <div className="adminHours">
+      {dataHours &&
+        dataHours.length > 0 &&
+        dataHours.map((hours) => (
+          <div className="timeContainer">
+            <h2>Modifier les horaires</h2>
 
-        <div className="hours">
-          <label>Heure fermeture déjeuner</label>
-          <input
-            type="text"
-            defaultValue={dataHours.length > 0 && `${dataHours[0].close_lunch}`}
-            onChange={(e) => setCloseLunch(e.target.value)}
-          />
-        </div>
+            <h3>Du mardi au jeudi</h3>
+            <form onSubmit={submitHandler}>
+              <div className="hours">
+                <label>Heure d'ouverture déjeuner</label>
+                <input
+                  type="text"
+                  defaultValue={hours.open_lunch}
+                  onChange={(e) => setOpenLunch(e.target.value)}
+                />
+              </div>
 
-        <div className="hours">
-          <label>Heure d'ouverture dîner</label>
-          <input
-            type="text"
-            defaultValue={dataHours.length > 0 && `${dataHours[0].open_diner}`}
-            onChange={(e) => setOpenDiner(e.target.value)}
-          />
-        </div>
+              <div className="hours">
+                <label>Heure fermeture déjeuner</label>
+                <input
+                  type="text"
+                  defaultValue={
+                    dataHours &&
+                    dataHours.length > 0 &&
+                    `${dataHours[0].close_lunch}`
+                  }
+                  onChange={(e) => setCloseLunch(e.target.value)}
+                />
+              </div>
 
-        <div className="hours">
-          <label>Heure fermeture dîner</label>
-          <input
-            type="text"
-            defaultValue={dataHours.length > 0 && `${dataHours[0].close_diner}`}
-            onChange={(e) => setCloseDiner(e.target.value)}
-          />
-        </div>
-      </form>
+              <div className="hours">
+                <label>Heure d'ouverture dîner</label>
+                <input
+                  type="text"
+                  defaultValue={
+                    dataHours &&
+                    dataHours.length > 0 &&
+                    `${dataHours[0].open_diner}`
+                  }
+                  onChange={(e) => setOpenDiner(e.target.value)}
+                />
+              </div>
 
-      <h3>Du vendredi au dimanche</h3>
+              <div className="hours">
+                <label>Heure fermeture dîner</label>
+                <input
+                  type="text"
+                  defaultValue={
+                    dataHours &&
+                    dataHours.length > 0 &&
+                    `${dataHours[0].close_diner}`
+                  }
+                  onChange={(e) => setCloseDiner(e.target.value)}
+                />
+              </div>
+            </form>
 
-      <form onSubmit={submitHandler}>
-        <div className="hours">
-          <label>Heures d'ouverture déjeuner</label>
-          <input
-            type="text"
-            defaultValue={dataHours.length > 1 && `${dataHours[1].open_lunch}`}
-          />
-        </div>
+            <h3>Du vendredi au dimanche</h3>
 
-        <div className="hours">
-          <label>Heures fermeture déjeuner</label>
-          <input
-            type="text"
-            defaultValue={dataHours.length > 1 && `${dataHours[1].close_lunch}`}
-          />
-        </div>
+            <form onSubmit={submitHandler}>
+              <div className="hours">
+                <label>Heures d'ouverture déjeuner</label>
+                <input
+                  type="text"
+                  defaultValue={
+                    dataHours &&
+                    dataHours.length > 1 &&
+                    `${dataHours[1].open_lunch}`
+                  }
+                />
+              </div>
 
-        <div className="hours">
-          <label>Heure d'ouverture dîner</label>
-          <input
-            type="text"
-            defaultValue={dataHours.length > 1 && `${dataHours[1].open_diner}`}
-          />
-        </div>
+              <div className="hours">
+                <label>Heures fermeture déjeuner</label>
+                <input
+                  type="text"
+                  defaultValue={
+                    dataHours &&
+                    dataHours.length > 1 &&
+                    `${dataHours[1].close_lunch}`
+                  }
+                />
+              </div>
 
-        <div className="hours">
-          <label>Heure fermeture dîner</label>
-          <input
-            type="text"
-            defaultValue={dataHours.length > 1 && `${dataHours[1].close_diner}`}
-          />
-        </div>
-      </form>
-      <button
-        type="submit"
-        onClick={() => {
-          updateHoursData(openLunch, closeLunch, openDiner, closeDiner);
-        }}
-      >
-        Enregistrer modifications
-      </button>
+              <div className="hours">
+                <label>Heure d'ouverture dîner</label>
+                <input
+                  type="text"
+                  defaultValue={
+                    dataHours &&
+                    dataHours.length > 1 &&
+                    `${dataHours[1].open_diner}`
+                  }
+                />
+              </div>
+
+              <div className="hours">
+                <label>Heure fermeture dîner</label>
+                <input
+                  type="text"
+                  defaultValue={
+                    dataHours &&
+                    dataHours.length > 1 &&
+                    `${dataHours[1].close_diner}`
+                  }
+                />
+              </div>
+            </form>
+            <button
+              type="submit"
+              onClick={() => {
+                updateHoursData(openLunch, closeLunch, openDiner, closeDiner);
+              }}
+            >
+              Enregistrer modifications
+            </button>
+          </div>
+        ))}
     </div>
   );
-
-  return <div className="adminHours">{timeOpenContent}</div>;
 }

@@ -2,9 +2,18 @@
     ul {
         li {
             border: 1px solid $color-yellow;
+            border-radius: 5px;
             padding: 20px;
+            display: flex;
+            justify-content: space-between;
             p{
                 color: $color-white;
+            }
+            button {
+                color: red;
+                border: 1px solid $color-yellow;
+                padding: 8px;
+                background: none;
             }
         }
     }
