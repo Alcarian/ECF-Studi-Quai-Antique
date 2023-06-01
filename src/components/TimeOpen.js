@@ -8,7 +8,7 @@ export default function TimeOpen() {
     const requestOptions = {
       method: "GET",
       headers: {
-        "Content-Type": "application/json, Access-Control-Allow-Origin",
+        "Content-Type": "application/json",
       },
       credentials: "include",
     };
