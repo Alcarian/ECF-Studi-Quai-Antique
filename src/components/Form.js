@@ -18,7 +18,6 @@ export default function Form() {
   const [showModal, setShowModal] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
   const [error, setError] = useState(null);
-  // const [errorMessage, setErrorMessage] = useState("");
 
   if (error) {
     console.log("true");

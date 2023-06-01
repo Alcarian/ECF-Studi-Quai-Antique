@@ -7,8 +7,9 @@ export default function TimeOpen() {
   function getHoursData() {
     const requestOptions = {
       method: "GET",
+      headers: { "Content-Type": "application/json, Authorization" },
       redirect: "follow",
-      credentials: "include",
+      mode: "cors",
     };
 
     return fetch(`${process.env.REACT_APP_API_URL}/api/hours/`, requestOptions)
