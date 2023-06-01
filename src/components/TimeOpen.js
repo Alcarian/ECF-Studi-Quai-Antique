@@ -7,7 +7,9 @@ export default function TimeOpen() {
   function getHoursData() {
     const requestOptions = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json, Access-Control-Allow-Origin",
+      },
       credentials: "include",
     };
 
