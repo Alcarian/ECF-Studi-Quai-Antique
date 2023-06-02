@@ -106,8 +106,6 @@ export default function Form() {
     }
 
     const data = dataUpdateSend;
-    console.log("*****DATA******");
-    console.log(data);
 
     const url = `${process.env.REACT_APP_API_URL}/api/booking/`;
 

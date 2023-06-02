@@ -1,25 +1,37 @@
 import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../../Store/AuthContext";
-import ConfirmSuppr from "../ConfirmSuppr";
+import SuppBooking from "./SuppBooking";
 
-export default function AdminBooking() {
+export default function AdminBooking(props) {
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
   const [bookingData, setBookingData] = useState([]);
   const [modification, setModification] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [bookingIdToDelete, setBookingIdToDelete] = useState(null);
 
-  const handleShowConfirm = () => {
+  const handleShowConfirm = (bookingId) => {
+    setBookingIdToDelete(bookingId);
     setShowConfirm(true);
   };
 
-  const handleCloseConfirm = () => {
+  const handleCloseConfirm = (bookingId) => {
+    setBookingIdToDelete(null);
     setShowConfirm(false);
   };
 
   // Modif données
   const modificationHandler = () => {
     setModification((modification) => !modification);
+  };
+
+  // Rafraîchir les données
+  const refreshBookingData = () => {
+    getBookingData().then((data) => {
+      if (data && data.results) {
+        setBookingData(data.results);
+      }
+    });
   };
 
   function getBookingData() {
@@ -56,28 +68,8 @@ export default function AdminBooking() {
     return newDate;
   };
 
-  function deleteBooking(id) {
-    const requestOptions = {
-      method: "DELETE",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json, Authorization",
-      },
-    };
-
-    return fetch(
-      `${process.env.REACT_APP_API_URL}/api/booking/deleteBooking?id=${id}`,
-      requestOptions
-    )
-      .then((response) => response.json())
-      .catch((error) => {
-        console.log("error requète", error);
-        throw error;
-      });
-  }
-
   return (
-    <div className="adminBooking">
+    <div className="adminBooking" id="adminBooking">
       <ul>
         {bookingData &&
           bookingData.length > 0 &&
@@ -96,19 +88,19 @@ export default function AdminBooking() {
                 {isLoggedIn && (
                   <button
                     onClick={() => {
-                      handleShowConfirm();
-                      deleteBooking(booking.id);
-                      modificationHandler();
-                      getBookingData().then(
-                        (data) =>
-                          data && data.results && setBookingData(data.results)
-                      );
+                      handleShowConfirm(booking.id);
                     }}
                   >
                     X
                   </button>
                 )}
-                {showConfirm && <ConfirmSuppr onClose={handleCloseConfirm} />}
+                {showConfirm && (
+                  <SuppBooking
+                    onClose={handleCloseConfirm}
+                    bookingId={bookingIdToDelete}
+                    refreshBookingData={refreshBookingData}
+                  />
+                )}
               </div>
             </li>
           ))}
