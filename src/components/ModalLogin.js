@@ -13,11 +13,11 @@ export default function ModalLogin(props) {
   const [datas, setDatas] = useState();
   const [error, setError] = useState(null);
 
-  if (error) {
-    console.log("true");
-  } else {
-    console.log("false");
-  }
+  // if (error) {
+  //   console.log("true");
+  // } else {
+  //   console.log("false");
+  // }
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -88,16 +88,14 @@ export default function ModalLogin(props) {
     fetchHandler();
 
     // clear inputs
-    // emailInputRef.current.value = "";
-    // passwordInputRef.current.value = "";
+    emailInputRef.current.value = "";
+    passwordInputRef.current.value = "";
   };
 
   // clear state error
   const errorHandler = () => {
     setError(null);
   };
-
-  console.log(datas);
 
   return (
     <div>
