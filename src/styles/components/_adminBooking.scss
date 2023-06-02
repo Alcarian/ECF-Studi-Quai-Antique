@@ -1,14 +1,29 @@
 .adminBooking {
     ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            text-align: center;
+        }
+        
         li {
             border: 1px solid $color-yellow;
             border-radius: 5px;
-            padding: 20px;
             display: flex;
             justify-content: space-between;
-            p{
-                color: $color-white;
+            margin-top: 10px;
+
+            div {
+                padding: 20px;
             }
+            p {
+                color: $color-white;
+                padding: 5px;
+            }
+
             button {
                 color: red;
                 border: 1px solid $color-yellow;

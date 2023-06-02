@@ -24,12 +24,20 @@ export default function UserAccount(props) {
     setModification((modification) => !modification);
   };
 
+  // Rafraîchir les données
+  const refreshUserData = () => {
+    getInfosData().then((data) => {
+      if (data && data.results) {
+        setInfosData(data.results);
+      }
+    });
+  };
+
   // surveiller les modifications des champs
   const [nom, setNom] = useState();
   const [couvert, setCouvert] = useState();
 
   // Requête GET
-
   function getInfosData() {
     const requestOptions = {
       method: "GET",
@@ -138,7 +146,14 @@ export default function UserAccount(props) {
               )}
               <div>
                 {isLoggedIn && (
-                  <button onClick={handleShowConfirm}>Supprimer compte</button>
+                  <button
+                    onClick={() => {
+                      handleShowConfirm();
+                      refreshUserData();
+                    }}
+                  >
+                    Supprimer compte
+                  </button>
                 )}
                 {showConfirm && <ConfirmSuppr onClose={handleCloseConfirm} />}
               </div>

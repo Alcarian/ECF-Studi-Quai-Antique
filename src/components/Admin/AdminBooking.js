@@ -21,9 +21,9 @@ export default function AdminBooking(props) {
   };
 
   // Modif données
-  const modificationHandler = () => {
-    setModification((modification) => !modification);
-  };
+  // const modificationHandler = () => {
+  //   setModification((modification) => !modification);
+  // };
 
   // Rafraîchir les données
   const refreshBookingData = () => {
@@ -71,6 +71,7 @@ export default function AdminBooking(props) {
   return (
     <div className="adminBooking" id="adminBooking">
       <ul>
+        <h2>Supprimer réservations</h2>
         {bookingData &&
           bookingData.length > 0 &&
           bookingData[0].map((booking) => (
