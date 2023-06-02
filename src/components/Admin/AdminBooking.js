@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import AuthContext from "../../Store/AuthContext";
+import ConfirmSuppr from "../ConfirmSuppr";
 
 export default function AdminBooking() {
+  const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
   const [bookingData, setBookingData] = useState([]);
   const [modification, setModification] = useState(false);
