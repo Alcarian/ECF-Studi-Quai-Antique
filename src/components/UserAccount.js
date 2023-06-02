@@ -19,9 +19,6 @@ export default function UserAccount(props) {
     setShowConfirm(false);
   };
 
-  console.log("****infosdata****");
-  console.log(infosData);
-
   // Modif données
   const modificationHandler = () => {
     setModification((modification) => !modification);

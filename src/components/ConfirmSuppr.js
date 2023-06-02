@@ -47,7 +47,7 @@ export default function ConfirmSupp(props) {
     <div className="modal">
       <div className="modal-content">
         <button onClick={props.onClose}>X</button>
-        <p>Voulez-vous vraiment supprimer votre compte ?</p>
+        <p>Voulez-vous vraiment supprimer ?</p>
         <button
           onSubmit={submitHandler}
           onClick={() => {

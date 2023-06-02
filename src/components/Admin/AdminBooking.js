@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 export default function AdminBooking() {
+  const isLoggedIn = authCtx.isLoggedIn;
   const [bookingData, setBookingData] = useState([]);
   const [modification, setModification] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handleShowConfirm = () => {
+    setShowConfirm(true);
+  };
+
+  const handleCloseConfirm = () => {
+    setShowConfirm(false);
+  };
 
   // Modif données
   const modificationHandler = () => {
@@ -80,18 +90,22 @@ export default function AdminBooking() {
                 <p>Numéro de téléphone : {booking.Num_téléphone}</p>
               </div>
               <div>
-                <button
-                  onClick={() => {
-                    deleteBooking(booking.id);
-                    modificationHandler();
-                    getBookingData().then(
-                      (data) =>
-                        data && data.results && setBookingData(data.results)
-                    );
-                  }}
-                >
-                  X
-                </button>
+                {isLoggedIn && (
+                  <button
+                    onClick={() => {
+                      handleShowConfirm();
+                      deleteBooking(booking.id);
+                      modificationHandler();
+                      getBookingData().then(
+                        (data) =>
+                          data && data.results && setBookingData(data.results)
+                      );
+                    }}
+                  >
+                    X
+                  </button>
+                )}
+                {showConfirm && <ConfirmSuppr onClose={handleCloseConfirm} />}
               </div>
             </li>
           ))}
