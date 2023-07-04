@@ -13,12 +13,6 @@ export default function ModalLogin(props) {
   const [datas, setDatas] = useState();
   const [error, setError] = useState(null);
 
-  // if (error) {
-  //   console.log("true");
-  // } else {
-  //   console.log("false");
-  // }
-
   const submitHandler = (event) => {
     event.preventDefault();
 
