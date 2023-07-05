@@ -10,6 +10,7 @@ export default function UserAccount(props) {
   const [infosData, setInfosData] = useState([]);
   const [modification, setModification] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const { onClose } = props;
 
   const handleShowConfirm = () => {
     setShowConfirm(true);
@@ -95,7 +96,7 @@ export default function UserAccount(props) {
       <div className="userAccount">
         {infosData.map((data, index) => (
           <div key={index} className="userAccount-content">
-            <button onClick={props.onClose} className="close-button">
+            <button onClick={onClose} className="close-button">
               X
             </button>
 
@@ -139,6 +140,7 @@ export default function UserAccount(props) {
                   onClick={() => {
                     modificationHandler();
                     updateData(nom, couvert);
+                    refreshUserData();
                   }}
                 >
                   Envoyer

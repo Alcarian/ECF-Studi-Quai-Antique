@@ -2,11 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../../Store/AuthContext";
 import SuppBooking from "./SuppBooking";
 
-export default function AdminBooking(props) {
+export default function AdminBooking() {
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
   const [bookingData, setBookingData] = useState([]);
-  const [modification, setModification] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [bookingIdToDelete, setBookingIdToDelete] = useState(null);
 
@@ -15,15 +14,10 @@ export default function AdminBooking(props) {
     setShowConfirm(true);
   };
 
-  const handleCloseConfirm = (bookingId) => {
+  const handleCloseConfirm = () => {
     setBookingIdToDelete(null);
     setShowConfirm(false);
   };
-
-  // Modif données
-  // const modificationHandler = () => {
-  //   setModification((modification) => !modification);
-  // };
 
   // Rafraîchir les données
   const refreshBookingData = () => {
@@ -57,7 +51,7 @@ export default function AdminBooking(props) {
 
   useEffect(() => {
     getBookingData();
-  }, [modification]);
+  }, []);
 
   const dateFormater = (date) => {
     let newDate = new Date(date).toLocaleDateString("fr-FR", {

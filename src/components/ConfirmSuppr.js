@@ -4,6 +4,7 @@ import AuthContext from "../Store/AuthContext";
 export default function ConfirmSupp(props) {
   const authCtx = useContext(AuthContext);
   const [modification, setModification] = useState(false);
+  const { onClose } = props;
 
   // Modif données
   const modificationHandler = () => {
@@ -46,7 +47,7 @@ export default function ConfirmSupp(props) {
   return (
     <div className="modal">
       <div className="modal-content">
-        <button onClick={props.onClose}>X</button>
+        <button onClick={onClose}>X</button>
         <p>Voulez-vous vraiment supprimer votre compte?</p>
         <button
           onSubmit={submitHandler}
